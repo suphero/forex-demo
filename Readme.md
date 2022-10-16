@@ -47,3 +47,14 @@ EXCHANGERATES_PREMIUM_PLAN=true
 PROVIDER=FX
 FIXER_API_KEY=MY_API_KEY
 ```
+
+## TODO
+
+- [ ] Unit Test
+- [ ] Joi.alternatives Conflicting error message
+- [ ] Endpoint Documentation / Postman schema
+- [ ] typedi use
+- [ ] data factory for alternative usages
+- [ ] persistent data
+- [ ] Typescript
+- [ ] Joi Validation Middleware
