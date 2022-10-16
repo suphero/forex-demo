@@ -18,7 +18,7 @@ export class FixerProvider extends BaseProvider {
     this.apiKey = apiKey;
   }
 
-  baseUrl = 'https://api.apilayer.com/fixer/';
+  baseUrl = 'https://api.apilayer.com/fixer';
 
   /**
    * Get Latest Exchange Rate
@@ -27,7 +27,7 @@ export class FixerProvider extends BaseProvider {
    * @returns {Promise<number>}
    */
   async latest(base, symbol) {
-    const url = `${this.baseUrl}latest?base=${base}&symbols=${symbol}`;
+    const url = `${this.baseUrl}/latest?base=${base}&symbols=${symbol}`;
     const options = { headers: { apiKey: this.apiKey } };
     const response = await axios.get(url, options);
     const jsonData = response.data;
@@ -44,7 +44,7 @@ export class FixerProvider extends BaseProvider {
    * @param {Promise<number>} amount
    */
   async convert(from, to, amount) {
-    const url = `${this.baseUrl}convert?from=${from}&to=${to}&amount=${amount}`;
+    const url = `${this.baseUrl}/convert?from=${from}&to=${to}&amount=${amount}`;
     const options = { headers: { apiKey: this.apiKey } };
     const response = await axios.get(url, options);
     const jsonData = response.data;

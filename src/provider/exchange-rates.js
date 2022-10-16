@@ -19,9 +19,9 @@ export class ExchangeRatesProvider extends BaseProvider {
     this.apiKey = apiKey;
     this.isPremium = isPremium;
     if (isPremium) {
-      this.baseUrl = 'https://api.exchangeratesapi.io/v1/';
+      this.baseUrl = 'https://api.exchangeratesapi.io/v1';
     } else {
-      this.baseUrl = 'http://api.exchangeratesapi.io/v1/';
+      this.baseUrl = 'http://api.exchangeratesapi.io/v1';
     }
   }
 
@@ -32,7 +32,7 @@ export class ExchangeRatesProvider extends BaseProvider {
    * @returns {Promise<number>}
    */
   async latest(base, symbol) {
-    const url = `${this.baseUrl}latest?access_key=${this.apiKey}&base=${base}&symbols=${symbol}`;
+    const url = `${this.baseUrl}/latest?access_key=${this.apiKey}&base=${base}&symbols=${symbol}`;
     const response = await axios.get(url);
     const jsonData = response.data;
     if (jsonData.success !== true) {
@@ -63,7 +63,7 @@ export class ExchangeRatesProvider extends BaseProvider {
    * @param {Promise<number>} amount
    */
   async convertPremium(from, to, amount) {
-    const url = `${this.baseUrl}convert?access_key=${this.apiKey}&from=${from}&to=${to}&amount=${amount}`;
+    const url = `${this.baseUrl}/convert?access_key=${this.apiKey}&from=${from}&to=${to}&amount=${amount}`;
     const response = await axios.get(url);
     const jsonData = response.data;
     if (jsonData.success !== true) {
