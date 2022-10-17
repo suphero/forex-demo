@@ -51,10 +51,13 @@ FIXER_API_KEY=MY_API_KEY
 ## TODO
 
 - [ ] Unit Test
+- [ ] Prettier
 - [ ] Joi.alternatives Conflicting error message
 - [ ] Endpoint Documentation / Postman schema
+- [ ] Test with Docker
 - [ ] typedi use
 - [ ] data factory for alternative usages
 - [ ] persistent data
 - [ ] Typescript
+- [ ] Move to CommonJS
 - [ ] Joi Validation Middleware
