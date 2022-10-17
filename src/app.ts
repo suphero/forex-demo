@@ -1,6 +1,5 @@
 import createError from 'http-errors';
 import express, { json, urlencoded } from 'express';
-import cookieParser from 'cookie-parser';
 
 import conversionRouter from './convert/routes';
 import exchangeRouter from './exchange/routes';
@@ -10,7 +9,6 @@ let app = express();
 
 app.use(json());
 app.use(urlencoded({ extended: false }));
-app.use(cookieParser());
 
 app.use('/convert', conversionRouter);
 app.use('/exchange', exchangeRouter);
