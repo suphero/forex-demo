@@ -2,13 +2,13 @@ import { describe, it, beforeEach } from 'mocha';
 import request from 'supertest';
 import nock from 'nock';
 import { StatusCodes } from 'http-status-codes';
-import app from '../../src/app';
+import app from '../src/app';
 import {
   ExchangeRatesFreeApiBaseUrl,
   ExchangeRatesPremiumApiBaseUrl,
   FixerApiBaseUrl,
   ProviderType,
-} from '../../src/lib/helpers/constants';
+} from '../src/lib/helpers/constants';
 
 describe('GET /exchange', () => {
   beforeEach(() => {

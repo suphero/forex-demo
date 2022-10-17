@@ -5,13 +5,13 @@ import request from 'supertest';
 import nock from 'nock';
 import { StatusCodes } from 'http-status-codes';
 import fs from 'fs';
-import app from '../../src/app';
+import app from '../src/app';
 import {
   ExchangeRatesFreeApiBaseUrl,
   ExchangeRatesPremiumApiBaseUrl,
   FixerApiBaseUrl,
   ProviderType,
-} from '../../src/lib/helpers/constants';
+} from '../src/lib/helpers/constants';
 
 chai.use(chaiAlmost());
 
