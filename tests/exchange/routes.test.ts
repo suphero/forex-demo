@@ -16,6 +16,8 @@ describe('GET /exchange', () => {
     process.env.EXCHANGERATES_API_KEY = '';
     process.env.EXCHANGERATES_PREMIUM_PLAN = '';
     process.env.FIXER_API_KEY = '';
+    process.env.REPOSITORY = '';
+    process.env.REPOSITORY_FILE_PATH = '';
   });
 
   it('missing query parameter', (done) => {
