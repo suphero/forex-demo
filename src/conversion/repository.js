@@ -18,12 +18,12 @@ export function add(transaction) {
 export function find(filter) {
   let result = transactions;
   if (filter.id) {
-    result = result.filter(r => r.id === filter.id);
+    result = result.filter((r) => r.id === filter.id);
   }
   if (filter.date) {
     const dateFrom = moment(filter.date).subtract(1, 'd');
     const dateTo = moment(filter.date).add(1, 'd');
-    result = result.filter(r => moment(r.date).isBetween(dateFrom, dateTo));
+    result = result.filter((r) => moment(r.date).isBetween(dateFrom, dateTo));
   }
   result = result.slice(filter.offset, filter.limit);
   return result;

@@ -3,9 +3,4 @@ import { ExchangeRatesProvider } from './exchange-rates.js';
 import { FixerProvider } from './fixer.js';
 import { ProviderFactory } from './factory.js';
 
-export {
-  BaseProvider,
-  ExchangeRatesProvider,
-  FixerProvider,
-  ProviderFactory
-}
+export { BaseProvider, ExchangeRatesProvider, FixerProvider, ProviderFactory };

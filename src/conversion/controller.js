@@ -1,4 +1,4 @@
-import { randomUUID } from "crypto";
+import { randomUUID } from 'crypto';
 import { ProviderFactory } from '../provider/index.js';
 import * as repository from './repository.js';
 
@@ -9,12 +9,12 @@ import * as repository from './repository.js';
  */
 export function conversions(filter) {
   const transactions = repository.find(filter);
-  const mappedResult = transactions.map(t => {
+  const mappedResult = transactions.map((t) => {
     return {
       id: t.id,
-      amount: t.to.amount
-    }
-  })
+      amount: t.to.amount,
+    };
+  });
   return mappedResult;
 }
 
@@ -35,16 +35,16 @@ export async function convert(from, to, amount) {
     date: new Date(),
     from: {
       currency: from,
-      amount
+      amount,
     },
     to: {
       currency: to,
-      amount: result
-    }
+      amount: result,
+    },
   };
   repository.add(transaction);
   return {
     id: transactionId,
-    amount: result
+    amount: result,
   };
 }

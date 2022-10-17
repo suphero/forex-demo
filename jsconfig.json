@@ -17,8 +17,6 @@
   ],
   "typeAcquisition": {
     "enable": true,
-    "include": [
-      "node"
-    ]
+    "include": ["node"]
   }
 }

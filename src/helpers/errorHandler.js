@@ -5,8 +5,8 @@ import logger from './logger.js';
  * Log Error
  * @param {Error} err Error
  */
-function logError (err) {
-  logger.error(err)
+function logError(err) {
+  logger.error(err);
 }
 
 /**
@@ -16,11 +16,8 @@ function logError (err) {
  * @param {express.Response} res Response
  * @param {express.NextFunction} _next Next Function
  */
-function returnError (err, _req, res, _next) {
-  res.status(err.statusCode || 500).send(err.message)
+function returnError(err, _req, res, _next) {
+  res.status(err.statusCode || 500).send(err.message);
 }
 
-export {
-  logError,
-  returnError
-}
+export { logError, returnError };

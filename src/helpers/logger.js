@@ -8,19 +8,17 @@ const options = {
     level: 'debug',
     handleExceptions: true,
     json: false,
-    colorize: true
-  }
-}
+    colorize: true,
+  },
+};
 
 /**
  * Create Logger
  */
 const logger = createLogger({
   levels: config.npm.levels,
-  transports: [
-    new _transports.Console(options.console),
-  ],
-  exitOnError: false
-})
+  transports: [new _transports.Console(options.console)],
+  exitOnError: false,
+});
 
-export default logger
+export default logger;

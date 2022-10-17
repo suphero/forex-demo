@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "nodemon ./src/bin/www",
-    "start": "node ./src/bin/www"
+    "start": "node ./src/bin/www",
+    "lint": "prettier --write .",
+    "prepare": "husky install"
   },
   "type": "module",
   "dependencies": {
@@ -20,6 +22,12 @@
     "winston": "^3.8.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "nodemon": "^2.0.20",
+    "prettier": "2.7.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }

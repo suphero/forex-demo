@@ -1,6 +1,9 @@
 import axios from 'axios';
 import { BaseProvider } from './index.js';
-import { ExternalApiError, MissingConfigurationError } from '../helpers/errors.js';
+import {
+  ExternalApiError,
+  MissingConfigurationError,
+} from '../helpers/errors.js';
 
 /**
  * fixer.io provider
@@ -10,7 +13,7 @@ export class FixerProvider extends BaseProvider {
    * Constructor
    * @param {string} apiKey
    */
-  constructor (apiKey) {
+  constructor(apiKey) {
     super();
     if (!apiKey) {
       throw new MissingConfigurationError('Api Key is missing');

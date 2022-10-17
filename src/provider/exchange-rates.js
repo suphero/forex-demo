@@ -1,6 +1,9 @@
 import axios from 'axios';
 import { BaseProvider } from './index.js';
-import { ExternalApiError, MissingConfigurationError } from '../helpers/errors.js';
+import {
+  ExternalApiError,
+  MissingConfigurationError,
+} from '../helpers/errors.js';
 
 /**
  * exchangeratesapi.io provider
@@ -11,7 +14,7 @@ export class ExchangeRatesProvider extends BaseProvider {
    * @param {string} apiKey
    * @param {boolean} isPremium
    */
-  constructor (apiKey, isPremium) {
+  constructor(apiKey, isPremium) {
     super();
     if (!apiKey) {
       throw new MissingConfigurationError('Api Key is missing');
