@@ -57,6 +57,4 @@ FIXER_API_KEY=MY_API_KEY
 - [ ] typedi use
 - [ ] data factory for alternative usages
 - [ ] persistent data
-- [ ] Typescript
-- [ ] Move to CommonJS
 - [ ] Joi Validation Middleware
