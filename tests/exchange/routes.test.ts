@@ -8,7 +8,7 @@ import {
   ExchangeRatesPremiumApiBaseUrl,
   FixerApiBaseUrl,
   Provider,
-} from '../../src/helpers/constants';
+} from '../../src/lib/helpers/constants';
 
 describe('GET /exchange', () => {
   beforeEach(() => {
