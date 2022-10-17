@@ -3,7 +3,7 @@ import express, { json, urlencoded } from 'express';
 
 import conversionRouter from './convert/routes';
 import exchangeRouter from './exchange/routes';
-import { logError, returnError } from './lib/helpers/errorHandler';
+import { handleError } from './lib/helpers/errorHandler';
 
 let app = express();
 
@@ -17,7 +17,6 @@ app.use((_req, _res, next) => {
   next(createError(404));
 });
 
-app.use(logError);
-app.use(returnError);
+app.use(handleError);
 
 export default app;
