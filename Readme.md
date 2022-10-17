@@ -35,7 +35,6 @@ This variable is required when the [Repository](#repository-optional) selected J
 
 ## TODO
 
-- [ ] Controllers typedi
 - [ ] Joi.alternatives Conflicting error message
 - [ ] Endpoint Documentation / Postman schema
 - [ ] Test with Docker

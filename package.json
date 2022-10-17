@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nodemon ./src/index.ts",
-    "start": "tsc && node ./dist",
+    "build": "tsc",
+    "start": "node dist",
     "lint": "prettier --write .",
     "test": "tsc && nyc mocha",
     "test:watch": "tsc && nyc mocha --watch"

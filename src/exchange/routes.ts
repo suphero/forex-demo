@@ -1,6 +1,7 @@
 import { Router } from 'express';
+import Container from 'typedi';
 import { InvalidInputError } from '../lib/helpers/errors';
-import { exchange } from './controller';
+import { ExchangeController } from './controller';
 import { exchangeSchema } from './schema';
 let router = Router();
 
@@ -15,7 +16,8 @@ router.get('/', async (req, res, next) => {
       throw new InvalidInputError(error.message);
     }
 
-    const rate = await exchange(value.base, value.symbol);
+    const ctrl = Container.get(ExchangeController);
+    const rate = await ctrl.exchange(value.base, value.symbol);
     res.json({ rate });
   } catch (error) {
     next(error);

@@ -1,6 +1,7 @@
 import { Router } from 'express';
+import Container from 'typedi';
 import { InvalidInputError } from '../lib/helpers/errors';
-import * as ctrl from './controller';
+import { ConvertController } from './controller';
 import { createSchema, findSchema } from './schema';
 let router = Router();
 
@@ -15,6 +16,7 @@ router.get('/', (req, res, next) => {
       throw new InvalidInputError(error.message);
     }
 
+    const ctrl = Container.get(ConvertController);
     const result = ctrl.conversions(value);
     res.json(result);
   } catch (error) {
@@ -33,6 +35,7 @@ router.post('/', async (req, res, next) => {
       throw new InvalidInputError(error.message);
     }
 
+    const ctrl = Container.get(ConvertController);
     const result = await ctrl.convert(value.from, value.to, value.amount);
     res.json(result);
   } catch (error) {
