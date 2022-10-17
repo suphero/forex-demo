@@ -32,12 +32,10 @@ export class ConvertController {
     const filterer = Container.get(ConvertFilterer);
     const repository = this.repositoryFactory.createRepository(filterer);
     const transactions = repository.find(filter);
-    const mappedResult = transactions.map((t) => {
-      return {
-        id: t.id,
-        amount: t.to.amount,
-      };
-    });
+    const mappedResult = transactions.map((t) => ({
+      id: t.id,
+      amount: t.to.amount,
+    }));
     return mappedResult;
   }
 
