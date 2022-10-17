@@ -1,4 +1,4 @@
-import { ProviderFactory } from '../provider/index.js';
+import { ProviderFactory } from '../provider';
 
 /**
  * Get Latest Exchange Rate
@@ -6,9 +6,8 @@ import { ProviderFactory } from '../provider/index.js';
  * @param {string} symbol Quote Symbol
  * @returns {Promise<number>}
  */
-export async function exchange(base, symbol) {
+export function exchange(base: string, symbol: string): Promise<number> {
   const factory = new ProviderFactory();
   const provider = factory.createProvider();
-  const rate = await provider.latest(base, symbol);
-  return rate;
+  return provider.latest(base, symbol);
 }

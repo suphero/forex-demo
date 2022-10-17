@@ -1,9 +1,6 @@
 import axios from 'axios';
-import { BaseProvider } from './index.js';
-import {
-  ExternalApiError,
-  MissingConfigurationError,
-} from '../helpers/errors.js';
+import { BaseProvider } from '.';
+import { ExternalApiError, MissingConfigurationError } from '../helpers/errors';
 
 /**
  * exchangeratesapi.io provider
@@ -14,7 +11,7 @@ export class ExchangeRatesProvider extends BaseProvider {
    * @param {string} apiKey
    * @param {boolean} isPremium
    */
-  constructor(apiKey, isPremium) {
+  constructor(apiKey: string, isPremium: boolean) {
     super();
     if (!apiKey) {
       throw new MissingConfigurationError('Api Key is missing');
@@ -28,13 +25,17 @@ export class ExchangeRatesProvider extends BaseProvider {
     }
   }
 
+  apiKey: string;
+  isPremium: boolean;
+  baseUrl: string;
+
   /**
    * Get Latest Exchange Rate
    * @param {string} base symbol
    * @param {string} symbol
    * @returns {Promise<number>}
    */
-  async latest(base, symbol) {
+  async latest(base: string, symbol: string): Promise<number> {
     const url = `${this.baseUrl}/latest?access_key=${this.apiKey}&base=${base}&symbols=${symbol}`;
     const response = await axios.get(url);
     const jsonData = response.data;
@@ -50,7 +51,7 @@ export class ExchangeRatesProvider extends BaseProvider {
    * @param {string} to symbol
    * @param {Promise<number>} amount
    */
-  async convert(from, to, amount) {
+  async convert(from: string, to: string, amount: number) {
     if (this.isPremium) {
       return this.convertPremium(from, to, amount);
     } else {
@@ -65,7 +66,7 @@ export class ExchangeRatesProvider extends BaseProvider {
    * @param {number} amount
    * @param {Promise<number>} amount
    */
-  async convertPremium(from, to, amount) {
+  async convertPremium(from: string, to: string, amount: number) {
     const url = `${this.baseUrl}/convert?access_key=${this.apiKey}&from=${from}&to=${to}&amount=${amount}`;
     const response = await axios.get(url);
     const jsonData = response.data;
@@ -82,7 +83,7 @@ export class ExchangeRatesProvider extends BaseProvider {
    * @param {number} amount
    * @param {Promise<number>} amount
    */
-  async convertFree(from, to, amount) {
+  async convertFree(from: string, to: string, amount: number) {
     const rate = await this.latest(from, to);
     return rate * amount;
   }

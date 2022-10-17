@@ -2,9 +2,9 @@ import createError from 'http-errors';
 import express, { json, urlencoded } from 'express';
 import cookieParser from 'cookie-parser';
 
-import conversionRouter from './conversion/routes.js';
-import exchangeRouter from './exchange/routes.js';
-import { logError, returnError } from './helpers/errorHandler.js';
+import conversionRouter from './conversion/routes';
+import exchangeRouter from './exchange/routes';
+import { logError, returnError } from './helpers/errorHandler';
 
 let app = express();
 

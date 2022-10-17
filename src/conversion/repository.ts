@@ -1,21 +1,22 @@
 import moment from 'moment';
+import { ITransaction, ITransactionFilter } from './model';
 
-const transactions = [];
+const transactions: ITransaction[] = [];
 
 /**
  * Add transaction
- * @param {any} transaction Transaction
+ * @param {ITransaction} transaction Transaction
  */
-export function add(transaction) {
+export function add(transaction: ITransaction) {
   transactions.push(transaction);
 }
 
 /**
  * Get Filtered Transactions
- * @param {any} filter Filter
+ * @param {ITransactionFilter} filter Filter
  * @returns Transaction array
  */
-export function find(filter) {
+export function find(filter: ITransactionFilter): ITransaction[] {
   let result = transactions;
   if (filter.id) {
     result = result.filter((r) => r.id === filter.id);

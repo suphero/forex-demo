@@ -1,18 +1,16 @@
-import { NotImplementedError } from '../helpers/errors.js';
+import { NotImplementedError } from '../helpers/errors';
 
 /**
  * Exchange Rate Base Provider
  */
-export class BaseProvider {
+export abstract class BaseProvider {
   /**
    * Get Latest Exchange Rate
    * @param {string} base symbol
    * @param {string} symbol
    * @returns {Promise<number>}
    */
-  async latest(base, symbol) {
-    throw new NotImplementedError();
-  }
+  abstract latest(base: string, symbol: string): Promise<number>;
   /**
    * Convert exchange
    * @param {string} from symbol
@@ -20,7 +18,5 @@ export class BaseProvider {
    * @param {number} amount
    * @returns {Promise<number>}
    */
-  async convert(from, to, amount) {
-    throw new NotImplementedError();
-  }
+  abstract convert(from: string, to: string, amount: number): Promise<number>;
 }

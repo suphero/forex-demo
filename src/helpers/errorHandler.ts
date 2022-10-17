@@ -1,11 +1,11 @@
 import express from 'express';
-import logger from './logger.js';
+import logger from './logger';
 
 /**
  * Log Error
  * @param {Error} err Error
  */
-function logError(err) {
+function logError(err: Error) {
   logger.error(err);
 }
 
@@ -16,7 +16,12 @@ function logError(err) {
  * @param {express.Response} res Response
  * @param {express.NextFunction} _next Next Function
  */
-function returnError(err, _req, res, _next) {
+function returnError(
+  err: any,
+  _req: express.Request,
+  res: express.Response,
+  _next: express.NextFunction
+) {
   res.status(err.statusCode || 500).send(err.message);
 }
 

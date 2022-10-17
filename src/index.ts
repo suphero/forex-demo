@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
-import app from '../app.js';
+import app from './app';
 import { createServer } from 'http';
 
 let port = parseInt(process.env.PORT || '3000', 10);
@@ -12,11 +12,11 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-/**
- * On Error
- * @param {Error} error Error
- */
-function onError(error) {
+// /**
+//  * On Error
+//  * @param {Error} error Error
+//  */
+function onError(error: any) {
   if (error.syscall !== 'listen') {
     throw error;
   }
@@ -41,6 +41,10 @@ function onError(error) {
  */
 function onListening() {
   let addr = server.address();
+  if (!addr) {
+    console.log('Address is null');
+    return;
+  }
   let bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   console.log('Listening on ' + bind);
 }
