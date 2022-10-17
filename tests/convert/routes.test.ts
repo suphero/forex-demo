@@ -10,7 +10,7 @@ import {
   ExchangeRatesPremiumApiBaseUrl,
   FixerApiBaseUrl,
   Provider,
-} from '../../src/helpers/constants';
+} from '../../src/lib/helpers/constants';
 
 chai.use(chaiAlmost());
 

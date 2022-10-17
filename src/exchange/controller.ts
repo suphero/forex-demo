@@ -1,5 +1,5 @@
 import { Container } from 'typedi';
-import { ProviderFactory } from '../provider';
+import { ProviderFactory } from '../lib/provider';
 
 /**
  * Get Latest Exchange Rate

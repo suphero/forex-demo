@@ -1,8 +1,9 @@
 import { randomUUID } from 'crypto';
 import { Container } from 'typedi';
-import { ProviderFactory } from '../provider';
+import { ProviderFactory } from '../lib/provider';
 import { ITransaction, ITransactionDto, ITransactionFilter } from './model';
-import * as repository from './repository';
+import { ConvertFilterer } from './filterer';
+import { RepositoryFactory } from '../lib/repository/factory';
 
 /**
  * Get Filtered Transactions
@@ -10,6 +11,11 @@ import * as repository from './repository';
  * @returns {ITransactionDto[]}
  */
 export function conversions(filter: ITransactionFilter): ITransactionDto[] {
+  const repositoryFactory = Container.get(
+    RepositoryFactory<ITransaction, ITransactionFilter>
+  );
+  const filterer = Container.get(ConvertFilterer);
+  const repository = repositoryFactory.createRepository(filterer);
   const transactions = repository.find(filter);
   const mappedResult = transactions.map((t) => {
     return {
@@ -32,8 +38,11 @@ export async function convert(
   toCurrency: string,
   fromAmount: number
 ): Promise<ITransactionDto> {
-  const factory = Container.get(ProviderFactory);
-  const provider = factory.createProvider();
+  const repositoryFactory = Container.get(RepositoryFactory);
+  const filterer = Container.get(ConvertFilterer);
+  const repository = repositoryFactory.createRepository(filterer);
+  const providerFactory = Container.get(ProviderFactory);
+  const provider = providerFactory.createProvider();
   const toAmount = await provider.convert(fromCurrency, toCurrency, fromAmount);
   const transactionId = randomUUID();
   const transaction: ITransaction = {

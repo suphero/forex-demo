@@ -24,36 +24,20 @@ If the [Provider](#provider-optional) selected ER, the plan type should be selec
 
 This variable is required when the [Provider](#provider-optional) selected FX.
 
-### Example .env Files
+### REPOSITORY (Optional)
 
-#### exchangeratesapi.io Free Version
+- RAM -> Memory Repository (Default)
+- JSON -> Json File
 
-```env
-PROVIDER=ER
-EXCHANGERATES_API_KEY=MY_API_KEY
-```
+### REPOSITORY_FILE_PATH (Cond. Required)
 
-#### exchangeratesapi.io Premium Version
-
-```env
-PROVIDER=ER
-EXCHANGERATES_API_KEY=MY_API_KEY
-EXCHANGERATES_PREMIUM_PLAN=true
-```
-
-#### fixer.io
-
-```env
-PROVIDER=FX
-FIXER_API_KEY=MY_API_KEY
-```
+This variable is required when the [Repository](#repository-optional) selected JSON.
 
 ## TODO
 
+- [ ] Controllers typedi
 - [ ] Joi.alternatives Conflicting error message
 - [ ] Endpoint Documentation / Postman schema
 - [ ] Test with Docker
-- [ ] data factory for alternative usages
-- [ ] persistent data
 - [ ] Joi Validation Middleware
 - [ ] Unit Test increase coverage rate

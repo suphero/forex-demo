@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser';
 
 import conversionRouter from './convert/routes';
 import exchangeRouter from './exchange/routes';
-import { logError, returnError } from './helpers/errorHandler';
+import { logError, returnError } from './lib/helpers/errorHandler';
 
 let app = express();
 
