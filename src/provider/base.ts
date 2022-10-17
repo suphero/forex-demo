@@ -1,5 +1,3 @@
-import { NotImplementedError } from '../helpers/errors';
-
 /**
  * Exchange Rate Base Provider
  */

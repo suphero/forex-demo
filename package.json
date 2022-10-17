@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "nodemon ./src/index.ts",
     "start": "tsc && node ./dist",
-    "lint": "prettier --write ."
+    "lint": "prettier --write .",
+    "test": "tsc && nyc mocha",
+    "test:watch": "tsc && nyc mocha --watch"
   },
   "dependencies": {
     "axios": "^1.1.2",
@@ -20,14 +22,26 @@
     "winston": "^3.8.2"
   },
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@types/chai": "^4.3.3",
+    "@types/chai-almost": "^1.0.1",
     "@types/cookie-parser": "^1.4.3",
     "@types/express": "^4.17.14",
     "@types/http-errors": "^1.8.2",
+    "@types/mocha": "^10.0.0",
     "@types/node": "^18.11.0",
+    "@types/supertest": "^2.0.12",
+    "chai": "^4.3.6",
+    "chai-almost": "^1.0.1",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "mocha": "^10.1.0",
+    "nock": "^13.2.9",
     "nodemon": "^2.0.20",
+    "nyc": "^15.1.0",
     "prettier": "2.7.1",
+    "source-map-support": "^0.5.21",
+    "supertest": "^6.3.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.4"
   },

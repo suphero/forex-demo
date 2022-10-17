@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { BaseProvider } from '.';
+import { FixerApiBaseUrl } from '../helpers/constants';
 import { ExternalApiError, MissingConfigurationError } from '../helpers/errors';
 
 /**
@@ -19,7 +20,7 @@ export class FixerProvider extends BaseProvider {
   }
 
   apiKey: string;
-  baseUrl = 'https://api.apilayer.com/fixer';
+  baseUrl = FixerApiBaseUrl;
 
   /**
    * Get Latest Exchange Rate

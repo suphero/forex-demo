@@ -2,7 +2,7 @@ import createError from 'http-errors';
 import express, { json, urlencoded } from 'express';
 import cookieParser from 'cookie-parser';
 
-import conversionRouter from './conversion/routes';
+import conversionRouter from './convert/routes';
 import exchangeRouter from './exchange/routes';
 import { logError, returnError } from './helpers/errorHandler';
 
@@ -12,7 +12,7 @@ app.use(json());
 app.use(urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/conversion', conversionRouter);
+app.use('/convert', conversionRouter);
 app.use('/exchange', exchangeRouter);
 
 app.use((_req, _res, next) => {

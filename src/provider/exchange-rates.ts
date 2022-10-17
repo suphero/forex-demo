@@ -1,5 +1,9 @@
 import axios from 'axios';
 import { BaseProvider } from '.';
+import {
+  ExchangeRatesFreeApiBaseUrl,
+  ExchangeRatesPremiumApiBaseUrl,
+} from '../helpers/constants';
 import { ExternalApiError, MissingConfigurationError } from '../helpers/errors';
 
 /**
@@ -19,9 +23,9 @@ export class ExchangeRatesProvider extends BaseProvider {
     this.apiKey = apiKey;
     this.isPremium = isPremium;
     if (isPremium) {
-      this.baseUrl = 'https://api.exchangeratesapi.io/v1';
+      this.baseUrl = ExchangeRatesPremiumApiBaseUrl;
     } else {
-      this.baseUrl = 'http://api.exchangeratesapi.io/v1';
+      this.baseUrl = ExchangeRatesFreeApiBaseUrl;
     }
   }
 
