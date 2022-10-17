@@ -50,7 +50,6 @@ FIXER_API_KEY=MY_API_KEY
 
 ## TODO
 
-- [ ] Unit Test
 - [ ] Joi.alternatives Conflicting error message
 - [ ] Endpoint Documentation / Postman schema
 - [ ] Test with Docker
@@ -58,3 +57,4 @@ FIXER_API_KEY=MY_API_KEY
 - [ ] data factory for alternative usages
 - [ ] persistent data
 - [ ] Joi Validation Middleware
+- [ ] Unit Test increase coverage rate
