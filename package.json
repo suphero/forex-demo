@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "nodemon ./src/bin/www",
-    "start": "node ./src/bin/www"
+    "start": "node ./src/bin/www",
+    "test": "nyc mocha src/**/*.test.js",
+    "test:watch": "nyc mocha src/**/*.test.js --watch",
+    "coverage": "nyc --reporter=html --reporter=text mocha src/**/*.test.js"
   },
   "type": "module",
   "dependencies": {
@@ -20,6 +23,10 @@
     "winston": "^3.8.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "mocha": "^10.1.0",
+    "nock": "^13.2.9",
+    "nodemon": "^2.0.20",
+    "nyc": "^15.1.0",
+    "supertest": "^6.3.0"
   }
 }
