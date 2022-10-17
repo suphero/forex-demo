@@ -37,6 +37,5 @@ This variable is required when the [Repository](#repository-optional) selected J
 
 - [ ] Joi.alternatives Conflicting error message
 - [ ] Endpoint Documentation / Postman schema
-- [ ] Test with Docker
 - [ ] Joi Validation Middleware
 - [ ] Unit Test increase coverage rate
