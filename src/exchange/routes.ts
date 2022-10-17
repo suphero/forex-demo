@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { InvalidInputError } from '../helpers/errors.js';
-import { exchange } from './controller.js';
-import { exchangeSchema } from './schema.js';
+import { InvalidInputError } from '../helpers/errors';
+import { exchange } from './controller';
+import { exchangeSchema } from './schema';
 let router = Router();
 
 /**

@@ -10,7 +10,7 @@ class BaseError extends Error {
    * @param {number} statusCode HTTP Status Code
    * @param {string} description Description
    */
-  constructor (name, statusCode, description) {
+  constructor(name: string, statusCode: number, description?: string) {
     super(description);
 
     Object.setPrototypeOf(this, new.target.prototype);
@@ -18,6 +18,7 @@ class BaseError extends Error {
     this.statusCode = statusCode;
     Error.captureStackTrace(this);
   }
+  statusCode: number;
 }
 
 /**
@@ -28,7 +29,7 @@ class InvalidInputError extends BaseError {
    * Constructor
    * @param {string} description Description
    */
-  constructor (description) {
+  constructor(description?: string) {
     super('Invalid Input', StatusCodes.BAD_REQUEST, description);
   }
 }
@@ -41,7 +42,7 @@ class ExternalApiError extends BaseError {
    * Constructor
    * @param {string} description Description
    */
-  constructor (description) {
+  constructor(description?: string) {
     super('External API Error', StatusCodes.FAILED_DEPENDENCY, description);
   }
 }
@@ -54,7 +55,7 @@ class NotImplementedError extends BaseError {
    * Constructor
    * @param {string} description Description
    */
-  constructor (description) {
+  constructor(description?: string) {
     super('Not Implemented', StatusCodes.NOT_IMPLEMENTED, description);
   }
 }
@@ -67,8 +68,12 @@ class MissingConfigurationError extends BaseError {
    * Constructor
    * @param {string} description Description
    */
-  constructor (description) {
-    super('Missing Configuration', StatusCodes.INSUFFICIENT_STORAGE, description);
+  constructor(description?: string) {
+    super(
+      'Missing Configuration',
+      StatusCodes.INSUFFICIENT_STORAGE,
+      description
+    );
   }
 }
 
@@ -78,4 +83,4 @@ export {
   ExternalApiError,
   NotImplementedError,
   MissingConfigurationError,
-}
+};

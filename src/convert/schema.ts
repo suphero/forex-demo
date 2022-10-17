@@ -13,7 +13,7 @@ export function findSchema() {
   const withIdSchema = Joi.object().keys({ id, limit, offset });
   const withDateSchema = Joi.object().keys({ date, limit, offset });
   const withIdDateSchema = Joi.object().keys({ id, date, limit, offset });
-  return Joi.alternatives(withIdSchema, withDateSchema, withIdDateSchema)//.messages({ "number.min": "Either Id or Date is required" });
+  return Joi.alternatives(withIdSchema, withDateSchema, withIdDateSchema); //.messages({ "number.min": "Either Id or Date is required" });
 }
 
 /**
@@ -24,6 +24,6 @@ export function createSchema() {
   return Joi.object().keys({
     from: Joi.string().required(),
     to: Joi.string().required(),
-    amount: Joi.number().required()
+    amount: Joi.number().required(),
   });
 }

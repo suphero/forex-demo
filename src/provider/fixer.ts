@@ -1,6 +1,7 @@
 import axios from 'axios';
-import { BaseProvider } from './index.js';
-import { ExternalApiError, MissingConfigurationError } from '../helpers/errors.js';
+import { BaseProvider } from '.';
+import { FixerApiBaseUrl } from '../helpers/constants';
+import { ExternalApiError, MissingConfigurationError } from '../helpers/errors';
 
 /**
  * fixer.io provider
@@ -10,7 +11,7 @@ export class FixerProvider extends BaseProvider {
    * Constructor
    * @param {string} apiKey
    */
-  constructor (apiKey) {
+  constructor(apiKey: string) {
     super();
     if (!apiKey) {
       throw new MissingConfigurationError('Api Key is missing');
@@ -18,7 +19,8 @@ export class FixerProvider extends BaseProvider {
     this.apiKey = apiKey;
   }
 
-  baseUrl = 'https://api.apilayer.com/fixer';
+  apiKey: string;
+  baseUrl = FixerApiBaseUrl;
 
   /**
    * Get Latest Exchange Rate
@@ -26,7 +28,7 @@ export class FixerProvider extends BaseProvider {
    * @param {string} symbol
    * @returns {Promise<number>}
    */
-  async latest(base, symbol) {
+  async latest(base: string, symbol: string) {
     const url = `${this.baseUrl}/latest?base=${base}&symbols=${symbol}`;
     const options = { headers: { apiKey: this.apiKey } };
     const response = await axios.get(url, options);
@@ -43,7 +45,7 @@ export class FixerProvider extends BaseProvider {
    * @param {string} to symbol
    * @param {Promise<number>} amount
    */
-  async convert(from, to, amount) {
+  async convert(from: string, to: string, amount: number) {
     const url = `${this.baseUrl}/convert?from=${from}&to=${to}&amount=${amount}`;
     const options = { headers: { apiKey: this.apiKey } };
     const response = await axios.get(url, options);
