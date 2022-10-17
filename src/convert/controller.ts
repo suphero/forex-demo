@@ -1,4 +1,5 @@
 import { randomUUID } from 'crypto';
+import { Container } from 'typedi';
 import { ProviderFactory } from '../provider';
 import { ITransaction, ITransactionDto, ITransactionFilter } from './model';
 import * as repository from './repository';
@@ -31,7 +32,7 @@ export async function convert(
   toCurrency: string,
   fromAmount: number
 ): Promise<ITransactionDto> {
-  const factory = new ProviderFactory();
+  const factory = Container.get(ProviderFactory);
   const provider = factory.createProvider();
   const toAmount = await provider.convert(fromCurrency, toCurrency, fromAmount);
   const transactionId = randomUUID();

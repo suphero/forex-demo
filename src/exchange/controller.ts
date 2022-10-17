@@ -1,3 +1,4 @@
+import { Container } from 'typedi';
 import { ProviderFactory } from '../provider';
 
 /**
@@ -7,7 +8,7 @@ import { ProviderFactory } from '../provider';
  * @returns {Promise<number>}
  */
 export function exchange(base: string, symbol: string): Promise<number> {
-  const factory = new ProviderFactory();
+  const factory = Container.get(ProviderFactory);
   const provider = factory.createProvider();
   return provider.latest(base, symbol);
 }

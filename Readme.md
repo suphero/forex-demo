@@ -53,7 +53,6 @@ FIXER_API_KEY=MY_API_KEY
 - [ ] Joi.alternatives Conflicting error message
 - [ ] Endpoint Documentation / Postman schema
 - [ ] Test with Docker
-- [ ] typedi use
 - [ ] data factory for alternative usages
 - [ ] persistent data
 - [ ] Joi Validation Middleware

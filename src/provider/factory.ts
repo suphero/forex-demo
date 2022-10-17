@@ -1,3 +1,4 @@
+import { Service } from 'typedi';
 import { BaseProvider, ExchangeRatesProvider, FixerProvider } from '.';
 import { Provider } from '../helpers/constants';
 import { NotImplementedError } from '../helpers/errors';
@@ -5,6 +6,7 @@ import { NotImplementedError } from '../helpers/errors';
 /**
  * Exchange Rate Provider Factory
  */
+@Service()
 export class ProviderFactory {
   /**
    * Create Exchange Rate Provider
