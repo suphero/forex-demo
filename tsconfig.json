@@ -11,10 +11,6 @@
   },
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Recommended",
-  "include": [
-    "src/**/*",
-    "tests/conversion/routes.test.ts",
-    "tests/exchange/routes.test.ts"
-  ],
+  "include": ["src/**/*"],
   "exclude": ["./tests/", "./node_modules/", "./dist/"]
 }
