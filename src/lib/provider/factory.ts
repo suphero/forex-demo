@@ -1,6 +1,6 @@
 import { Service } from 'typedi';
 import { BaseProvider, ExchangeRatesProvider, FixerProvider } from '.';
-import { Provider } from '../helpers/constants';
+import { ProviderType } from '../helpers/constants';
 import { NotImplementedError } from '../helpers/errors';
 
 /**
@@ -13,13 +13,13 @@ export class ProviderFactory {
    * @returns {BaseProvider}
    */
   createProvider = (): BaseProvider => {
-    const provider = process.env.PROVIDER || Provider.EXCHANGERATES;
-    if (provider === Provider.EXCHANGERATES) {
+    const provider = process.env.PROVIDER || ProviderType.EXCHANGERATES;
+    if (provider === ProviderType.EXCHANGERATES) {
       const apiKey = process.env.EXCHANGERATES_API_KEY || '';
       const isPremium =
         process.env.EXCHANGERATES_PREMIUM_PLAN === 'true' || false;
       return new ExchangeRatesProvider(apiKey, isPremium);
-    } else if (provider === Provider.FIXER) {
+    } else if (provider === ProviderType.FIXER) {
       const apiKey = process.env.FIXER_API_KEY || '';
       return new FixerProvider(apiKey);
     } else {

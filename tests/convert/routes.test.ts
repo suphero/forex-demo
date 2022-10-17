@@ -9,7 +9,7 @@ import {
   ExchangeRatesFreeApiBaseUrl,
   ExchangeRatesPremiumApiBaseUrl,
   FixerApiBaseUrl,
-  Provider,
+  ProviderType,
 } from '../../src/lib/helpers/constants';
 
 chai.use(chaiAlmost());
@@ -49,7 +49,7 @@ describe('POST /convert', () => {
   });
 
   it('missing exchangeratesapi api key', (done) => {
-    process.env.PROVIDER = Provider.EXCHANGERATES;
+    process.env.PROVIDER = ProviderType.EXCHANGERATES;
     request(app)
       .post('/convert')
       .send({ from: 'EUR', to: 'USD', amount: 5 })
@@ -57,7 +57,7 @@ describe('POST /convert', () => {
   });
 
   it('valid exchangeratesapi free input', async () => {
-    process.env.PROVIDER = Provider.EXCHANGERATES;
+    process.env.PROVIDER = ProviderType.EXCHANGERATES;
     process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
     nock(ExchangeRatesFreeApiBaseUrl)
       .get('/latest?access_key=ER_KEY&base=EUR&symbols=USD')
@@ -75,7 +75,7 @@ describe('POST /convert', () => {
   });
 
   it('valid exchangeratesapi premium input', async () => {
-    process.env.PROVIDER = Provider.EXCHANGERATES;
+    process.env.PROVIDER = ProviderType.EXCHANGERATES;
     process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
     process.env.EXCHANGERATES_PREMIUM_PLAN = 'true';
     nock(ExchangeRatesPremiumApiBaseUrl)
@@ -93,7 +93,7 @@ describe('POST /convert', () => {
   });
 
   it('failed exchangerates api free input', async () => {
-    process.env.PROVIDER = Provider.EXCHANGERATES;
+    process.env.PROVIDER = ProviderType.EXCHANGERATES;
     process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
     nock(ExchangeRatesFreeApiBaseUrl)
       .get('/latest?access_key=ER_KEY&base=EUR&symbols=USD')
@@ -111,7 +111,7 @@ describe('POST /convert', () => {
   });
 
   it('failed exchangerates api premium input', async () => {
-    process.env.PROVIDER = Provider.EXCHANGERATES;
+    process.env.PROVIDER = ProviderType.EXCHANGERATES;
     process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
     process.env.EXCHANGERATES_PREMIUM_PLAN = 'true';
     nock(ExchangeRatesPremiumApiBaseUrl)
@@ -130,7 +130,7 @@ describe('POST /convert', () => {
   });
 
   it('missing fixer api key', (done) => {
-    process.env.PROVIDER = Provider.FIXER;
+    process.env.PROVIDER = ProviderType.FIXER;
     request(app)
       .post('/convert')
       .send({ from: 'EUR', to: 'USD', amount: 5 })
@@ -138,7 +138,7 @@ describe('POST /convert', () => {
   });
 
   it('valid fixer input', async () => {
-    process.env.PROVIDER = Provider.FIXER;
+    process.env.PROVIDER = ProviderType.FIXER;
     process.env.FIXER_API_KEY = 'FX_KEY';
     nock(FixerApiBaseUrl)
       .get('/convert?from=EUR&to=USD&amount=5')
@@ -154,7 +154,7 @@ describe('POST /convert', () => {
   });
 
   it('failed fixer api input', async () => {
-    process.env.PROVIDER = Provider.FIXER;
+    process.env.PROVIDER = ProviderType.FIXER;
     process.env.FIXER_API_KEY = 'FX_KEY';
     nock(FixerApiBaseUrl)
       .get('/convert?from=EUR&to=USD&amount=5')

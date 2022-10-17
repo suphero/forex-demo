@@ -1,5 +1,8 @@
 import { IFilterBase } from '../lib/model';
 
+/**
+ * Transaction model
+ */
 export interface ITransaction {
   id: string;
   date: Date;
@@ -13,11 +16,17 @@ export interface ITransaction {
   };
 }
 
+/**
+ * Transaction DTO Model
+ */
 export interface ITransactionDto {
   id: string;
   amount: number;
 }
 
+/**
+ * Transaction Filter Model
+ */
 export interface ITransactionFilter extends IFilterBase {
   id?: string;
   date?: Date;

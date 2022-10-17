@@ -6,10 +6,18 @@ import { FiltererBase } from '../filterer';
 import { IFilterBase } from '../model';
 import { MemoryPaging } from '../paging';
 
+/**
+ * Json Repository
+ */
 export class JsonRepository<
   T,
   TFilter extends IFilterBase
 > extends BaseRepository<T, TFilter> {
+  /**
+   * Json Repository Constructor
+   * @param paging Paging
+   * @param filterer Filterer
+   */
   constructor(
     paging: MemoryPaging<T>,
     filterer: FiltererBase<T, TFilter>,
@@ -27,10 +35,18 @@ export class JsonRepository<
   filterer: FiltererBase<T, TFilter>;
   filePath: string;
 
+  /**
+   * Get Folder of the File Path
+   * @returns Parent Folder
+   */
   folderName() {
     return path.dirname(this.filePath);
   }
 
+  /**
+   * Get File Content
+   * @returns Read File Content
+   */
   readFile(): T[] {
     if (!fs.existsSync(this.filePath)) {
       return [];
@@ -41,6 +57,10 @@ export class JsonRepository<
     return datum;
   }
 
+  /**
+   * Write Content to File
+   * @param datum Content of the File
+   */
   writeFile(datum: T[]) {
     const folderName = this.folderName();
     if (folderName && !fs.existsSync(folderName)) {
@@ -50,14 +70,22 @@ export class JsonRepository<
     fs.writeFileSync(this.filePath, content);
   }
 
-  add(data: T): T {
+  /**
+   * Add Data
+   * @param data Data to add
+   */
+  add(data: T) {
     const datum = this.readFile();
     datum.push(data);
     this.writeFile(datum);
     return data;
   }
 
-  find(filter: TFilter): T[] {
+  /**
+   * Filter Data
+   * @param filter Data Filter
+   */
+  find(filter: TFilter) {
     const datum = this.readFile();
     const filteredList = this.filterer.filter(datum, filter);
     return this.paging.page(filteredList, filter);

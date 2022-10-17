@@ -7,7 +7,7 @@ import {
   ExchangeRatesFreeApiBaseUrl,
   ExchangeRatesPremiumApiBaseUrl,
   FixerApiBaseUrl,
-  Provider,
+  ProviderType,
 } from '../../src/lib/helpers/constants';
 
 describe('GET /exchange', () => {
@@ -30,14 +30,14 @@ describe('GET /exchange', () => {
   });
 
   it('missing exchangeratesapi api key', (done) => {
-    process.env.PROVIDER = Provider.EXCHANGERATES;
+    process.env.PROVIDER = ProviderType.EXCHANGERATES;
     request(app)
       .get('/exchange?base=EUR&symbol=USD')
       .expect(StatusCodes.INSUFFICIENT_STORAGE, done);
   });
 
   it('valid exchangeratesapi free input', (done) => {
-    process.env.PROVIDER = Provider.EXCHANGERATES;
+    process.env.PROVIDER = ProviderType.EXCHANGERATES;
     process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
     nock(ExchangeRatesFreeApiBaseUrl)
       .get('/latest?access_key=ER_KEY&base=EUR&symbols=USD')
@@ -53,7 +53,7 @@ describe('GET /exchange', () => {
   });
 
   it('valid exchangeratesapi premium input', (done) => {
-    process.env.PROVIDER = Provider.EXCHANGERATES;
+    process.env.PROVIDER = ProviderType.EXCHANGERATES;
     process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
     process.env.EXCHANGERATES_PREMIUM_PLAN = 'true';
     nock(ExchangeRatesPremiumApiBaseUrl)
@@ -70,7 +70,7 @@ describe('GET /exchange', () => {
   });
 
   it('failed exchangerates api input', (done) => {
-    process.env.PROVIDER = Provider.EXCHANGERATES;
+    process.env.PROVIDER = ProviderType.EXCHANGERATES;
     process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
     nock(ExchangeRatesFreeApiBaseUrl)
       .get('/latest?access_key=ER_KEY&base=EUR&symbols=USD')
@@ -87,14 +87,14 @@ describe('GET /exchange', () => {
   });
 
   it('missing fixer api key', (done) => {
-    process.env.PROVIDER = Provider.FIXER;
+    process.env.PROVIDER = ProviderType.FIXER;
     request(app)
       .get('/exchange?base=EUR&symbol=USD')
       .expect(StatusCodes.INSUFFICIENT_STORAGE, done);
   });
 
   it('valid fixer input', (done) => {
-    process.env.PROVIDER = Provider.FIXER;
+    process.env.PROVIDER = ProviderType.FIXER;
     process.env.FIXER_API_KEY = 'FX_KEY';
     nock(FixerApiBaseUrl)
       .get('/latest?base=EUR&symbols=USD')
@@ -110,7 +110,7 @@ describe('GET /exchange', () => {
   });
 
   it('failed fixer api input', (done) => {
-    process.env.PROVIDER = Provider.FIXER;
+    process.env.PROVIDER = ProviderType.FIXER;
     process.env.FIXER_API_KEY = 'FX_KEY';
     nock(FixerApiBaseUrl)
       .get('/latest?base=EUR&symbols=USD')

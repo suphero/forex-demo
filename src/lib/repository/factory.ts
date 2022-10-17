@@ -12,7 +12,7 @@ import { MemoryPaging } from '../paging';
 @Service()
 export class RepositoryFactory<T, TFilter extends IFilterBase> {
   /**
-   * Create Base Repository
+   * Create Repository
    * @returns {BaseRepository}
    */
   createRepository = (
