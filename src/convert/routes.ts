@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { InvalidInputError } from '../helpers/errors';
+import { InvalidInputError } from '../lib/helpers/errors';
 import * as ctrl from './controller';
 import { createSchema, findSchema } from './schema';
 let router = Router();

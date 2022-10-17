@@ -7,3 +7,8 @@ export enum Provider {
   EXCHANGERATES = 'ER',
   FIXER = 'FX',
 }
+
+export enum RepositoryType {
+  MEMORY = 'RAM',
+  JSON = 'JSON',
+}
