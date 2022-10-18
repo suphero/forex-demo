@@ -4,6 +4,10 @@
 
 [Schema](./.env.schema) for the environmental variable is included.
 
+### PORT (Optional)
+
+Specify http port. Default is 3000.
+
 ### PROVIDER (Optional)
 
 - ER -> exchangeratesapi.io (Default)
