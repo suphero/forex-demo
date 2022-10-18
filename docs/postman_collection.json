@@ -1,0 +1,593 @@
+{
+  "info": {
+    "_postman_id": "abc15563-291e-4434-9f23-ad670a0a3fb5",
+    "name": "Forex Demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2803116"
+  },
+  "item": [
+    {
+      "name": "Provider",
+      "item": [
+        {
+          "name": "exchangeratesapi.io",
+          "item": [
+            {
+              "name": "Latest",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://api.exchangeratesapi.io/v1/latest?access_key={{EXCHANGERATES_API_KEY}}&base=EUR&symbols=USD",
+                  "protocol": "http",
+                  "host": ["api", "exchangeratesapi", "io"],
+                  "path": ["v1", "latest"],
+                  "query": [
+                    {
+                      "key": "access_key",
+                      "value": "{{EXCHANGERATES_API_KEY}}",
+                      "description": "Exchange Rates Api Key"
+                    },
+                    {
+                      "key": "base",
+                      "value": "EUR",
+                      "description": "Base Currency"
+                    },
+                    {
+                      "key": "symbols",
+                      "value": "USD",
+                      "description": "Target Currencies"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Convert",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://api.exchangeratesapi.io/v1/convert?access_key={{EXCHANGERATES_API_KEY}}&base=EUR&symbols=USD",
+                  "protocol": "http",
+                  "host": ["api", "exchangeratesapi", "io"],
+                  "path": ["v1", "convert"],
+                  "query": [
+                    {
+                      "key": "access_key",
+                      "value": "{{EXCHANGERATES_API_KEY}}",
+                      "description": "Exchange Rates Api Key"
+                    },
+                    {
+                      "key": "base",
+                      "value": "EUR",
+                      "description": "Base Currency"
+                    },
+                    {
+                      "key": "symbols",
+                      "value": "USD",
+                      "description": "Target Currencies"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "fixer.io",
+          "item": [
+            {
+              "name": "Latest",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apiKey",
+                    "value": "{{FIXER_API_KEY}}",
+                    "type": "text",
+                    "description": "Fixer Api Key"
+                  }
+                ],
+                "url": {
+                  "raw": "https://api.apilayer.com/fixer/latest?base=EUR&symbols=USD",
+                  "protocol": "https",
+                  "host": ["api", "apilayer", "com"],
+                  "path": ["fixer", "latest"],
+                  "query": [
+                    {
+                      "key": "base",
+                      "value": "EUR",
+                      "description": "Base Currency"
+                    },
+                    {
+                      "key": "symbols",
+                      "value": "USD",
+                      "description": "Target Currencies"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Convert",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apiKey",
+                    "value": "{{FIXER_API_KEY}}",
+                    "description": "Fixer Api Key",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://api.apilayer.com/fixer/convert?from=EUR&to=USD&amount=5",
+                  "protocol": "https",
+                  "host": ["api", "apilayer", "com"],
+                  "path": ["fixer", "convert"],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": "EUR",
+                      "description": "From Currency"
+                    },
+                    {
+                      "key": "to",
+                      "value": "USD",
+                      "description": "To Currency"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "5",
+                      "description": "From Amount"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Exchange",
+      "item": [
+        {
+          "name": "Exchange Rate",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{FOREX_DEMO_API_URL}}/exchange?base=EUR&symbol=USD",
+              "host": ["{{FOREX_DEMO_API_URL}}"],
+              "path": ["exchange"],
+              "query": [
+                {
+                  "key": "base",
+                  "value": "EUR",
+                  "description": "Base Currency"
+                },
+                {
+                  "key": "symbol",
+                  "value": "USD",
+                  "description": "Target Currency"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Convert",
+      "item": [
+        {
+          "name": "Conversion",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"from\": \"EUR\",\n    \"to\": \"USD\",\n    \"amount\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{FOREX_DEMO_API_URL}}/convert",
+              "host": ["{{FOREX_DEMO_API_URL}}"],
+              "path": ["convert"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Conversion List",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{FOREX_DEMO_API_URL}}/convert?id=24c5d811-c92c-4afd-8482-1d95283c7404&date=2022-10-18&limit=10&offset=0",
+              "host": ["{{FOREX_DEMO_API_URL}}"],
+              "path": ["convert"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "24c5d811-c92c-4afd-8482-1d95283c7404",
+                  "description": "Transaction Id"
+                },
+                {
+                  "key": "date",
+                  "value": "2022-10-18",
+                  "description": "Transaction Date"
+                },
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Return Limit (Default 10)"
+                },
+                {
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Offset (Default 0)"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Id Only",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{FOREX_DEMO_API_URL}}/convert?id=24c5d811-c92c-4afd-8482-1d95283c7404",
+                  "host": ["{{FOREX_DEMO_API_URL}}"],
+                  "path": ["convert"],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "24c5d811-c92c-4afd-8482-1d95283c7404",
+                      "description": "Transaction Id"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2022-10-18",
+                      "description": "Transaction Date",
+                      "disabled": true
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10",
+                      "description": "Return Limit (Default 10)",
+                      "disabled": true
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0",
+                      "description": "Offset (Default 0)",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            },
+            {
+              "name": "Date Only",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{FOREX_DEMO_API_URL}}/convert?date=2022-10-18",
+                  "host": ["{{FOREX_DEMO_API_URL}}"],
+                  "path": ["convert"],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "24c5d811-c92c-4afd-8482-1d95283c7404",
+                      "description": "Transaction Id",
+                      "disabled": true
+                    },
+                    {
+                      "key": "date",
+                      "value": "2022-10-18",
+                      "description": "Transaction Date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10",
+                      "description": "Return Limit (Default 10)",
+                      "disabled": true
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0",
+                      "description": "Offset (Default 0)",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            },
+            {
+              "name": "Both Id and Date",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{FOREX_DEMO_API_URL}}/convert?id=24c5d811-c92c-4afd-8482-1d95283c7404&date=2022-10-18",
+                  "host": ["{{FOREX_DEMO_API_URL}}"],
+                  "path": ["convert"],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "24c5d811-c92c-4afd-8482-1d95283c7404",
+                      "description": "Transaction Id"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2022-10-18",
+                      "description": "Transaction Date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10",
+                      "description": "Return Limit (Default 10)",
+                      "disabled": true
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0",
+                      "description": "Offset (Default 0)",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            },
+            {
+              "name": "Missing Criteria",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{FOREX_DEMO_API_URL}}/convert",
+                  "host": ["{{FOREX_DEMO_API_URL}}"],
+                  "path": ["convert"],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "24c5d811-c92c-4afd-8482-1d95283c7404",
+                      "description": "Transaction Id",
+                      "disabled": true
+                    },
+                    {
+                      "key": "date",
+                      "value": "2022-10-18",
+                      "description": "Transaction Date",
+                      "disabled": true
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10",
+                      "description": "Return Limit (Default 10)",
+                      "disabled": true
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0",
+                      "description": "Offset (Default 0)",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            },
+            {
+              "name": "First 10 items with Date (Page 1)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{FOREX_DEMO_API_URL}}/convert?date=2022-10-18&limit=10",
+                  "host": ["{{FOREX_DEMO_API_URL}}"],
+                  "path": ["convert"],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "24c5d811-c92c-4afd-8482-1d95283c7404",
+                      "description": "Transaction Id",
+                      "disabled": true
+                    },
+                    {
+                      "key": "date",
+                      "value": "2022-10-18",
+                      "description": "Transaction Date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10",
+                      "description": "Return Limit (Default 10)"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0",
+                      "description": "Offset (Default 0)",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            },
+            {
+              "name": "Second 10 items with Date (Page 2)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{FOREX_DEMO_API_URL}}/convert?date=2022-10-18&limit=10&offset=10",
+                  "host": ["{{FOREX_DEMO_API_URL}}"],
+                  "path": ["convert"],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "24c5d811-c92c-4afd-8482-1d95283c7404",
+                      "description": "Transaction Id",
+                      "disabled": true
+                    },
+                    {
+                      "key": "date",
+                      "value": "2022-10-18",
+                      "description": "Transaction Date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10",
+                      "description": "Return Limit (Default 10)"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "10",
+                      "description": "Offset (Default 0)"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "FOREX_DEMO_API_URL",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "EXCHANGERATES_API_KEY",
+      "value": "MY_EXCHANGERATES_API_KEY",
+      "type": "string"
+    },
+    {
+      "key": "FIXER_API_KEY",
+      "value": "MY_FIXER_API_KEY",
+      "type": "string"
+    }
+  ]
+}
