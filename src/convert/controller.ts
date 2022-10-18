@@ -1,5 +1,5 @@
 import { randomUUID } from 'crypto';
-import { Container, Service } from 'typedi';
+import { Service } from 'typedi';
 import { ProviderFactory } from '../lib/provider';
 import { ITransaction, ITransactionDto, ITransactionFilter } from './model';
 import { ConvertFilterer } from './filterer';
@@ -15,13 +15,16 @@ export class ConvertController {
    */
   constructor(
     providerFactory: ProviderFactory,
-    repositoryFactory: RepositoryFactory<ITransaction, ITransactionFilter>
+    repositoryFactory: RepositoryFactory<ITransaction, ITransactionFilter>,
+    filterer: ConvertFilterer
   ) {
     this.providerFactory = providerFactory;
     this.repositoryFactory = repositoryFactory;
+    this.filterer = filterer;
   }
   providerFactory: ProviderFactory;
   repositoryFactory: RepositoryFactory<ITransaction, ITransactionFilter>;
+  filterer: ConvertFilterer;
 
   /**
    * Get Filtered Transactions
@@ -29,8 +32,7 @@ export class ConvertController {
    * @returns {ITransactionDto[]}
    */
   conversions(filter: ITransactionFilter): ITransactionDto[] {
-    const filterer = Container.get(ConvertFilterer);
-    const repository = this.repositoryFactory.createRepository(filterer);
+    const repository = this.repositoryFactory.createRepository(this.filterer);
     const transactions = repository.find(filter);
     const mappedResult = transactions.map((t) => ({
       id: t.id,
@@ -51,8 +53,7 @@ export class ConvertController {
     toCurrency: string,
     fromAmount: number
   ): Promise<ITransactionDto> {
-    const filterer = Container.get(ConvertFilterer);
-    const repository = this.repositoryFactory.createRepository(filterer);
+    const repository = this.repositoryFactory.createRepository(this.filterer);
     const provider = this.providerFactory.createProvider();
     const toAmount = await provider.convert(
       fromCurrency,

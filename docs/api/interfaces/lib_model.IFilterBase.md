@@ -27,7 +27,7 @@ Filter Base Interface
 
 #### Defined in
 
-[src/lib/model.ts:5](https://github.com/suphero/forex-demo/blob/1257222/src/lib/model.ts#L5)
+[src/lib/model.ts:5](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/lib/model.ts#L5)
 
 ---
 
@@ -37,4 +37,4 @@ Filter Base Interface
 
 #### Defined in
 
-[src/lib/model.ts:6](https://github.com/suphero/forex-demo/blob/1257222/src/lib/model.ts#L6)
+[src/lib/model.ts:6](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/lib/model.ts#L6)

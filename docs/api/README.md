@@ -51,5 +51,4 @@ This variable is required when the [Repository](#repository-optional) selected J
 
 ## TODO
 
-- [ ] Joi Validation Middleware
 - [ ] Joi.alternatives Conflicting error message

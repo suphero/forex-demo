@@ -61,4 +61,4 @@ Filterer Base
 
 #### Defined in
 
-[src/lib/filterer.ts:7](https://github.com/suphero/forex-demo/blob/1257222/src/lib/filterer.ts#L7)
+[src/lib/filterer.ts:7](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/lib/filterer.ts#L7)

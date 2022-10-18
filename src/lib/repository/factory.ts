@@ -12,6 +12,14 @@ import { MemoryPaging } from '../paging';
 @Service()
 export class RepositoryFactory<T, TFilter extends IFilterBase> {
   /**
+   * Repository Factory Constructor
+   */
+  constructor(paging: MemoryPaging<T>) {
+    this.paging = paging;
+  }
+  paging: MemoryPaging<T>;
+
+  /**
    * Create Repository
    * @returns {BaseRepository}
    */
@@ -20,12 +28,10 @@ export class RepositoryFactory<T, TFilter extends IFilterBase> {
   ): BaseRepository<T, TFilter> => {
     const repository = process.env.REPOSITORY || RepositoryType.MEMORY;
     if (repository === RepositoryType.MEMORY) {
-      const paging = Container.get(MemoryPaging<T>);
-      return new MemoryRepository(paging, filterer);
+      return new MemoryRepository(this.paging, filterer);
     } else if (repository === RepositoryType.JSON) {
-      const paging = Container.get(MemoryPaging<T>);
       const filePath = process.env.REPOSITORY_FILE_PATH || '';
-      return new JsonRepository(paging, filterer, filePath);
+      return new JsonRepository(this.paging, filterer, filePath);
     } else {
       throw new NotImplementedError('Not Implemented Repository');
     }
