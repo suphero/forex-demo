@@ -2,256 +2,178 @@ import { describe, it } from 'mocha';
 import chai, { expect } from 'chai';
 import chaiAlmost from 'chai-almost';
 import request from 'supertest';
-import nock from 'nock';
 import { StatusCodes } from 'http-status-codes';
 import fs from 'fs';
 import app from '../src/app';
-import {
-  ExchangeRatesFreeApiBaseUrl,
-  ExchangeRatesPremiumApiBaseUrl,
-  FixerApiBaseUrl,
-  ProviderType,
-} from '../src/lib/helpers/constants';
+import { ProviderType } from '../src/lib/helpers/constants';
+import * as helper from './helper';
 
 chai.use(chaiAlmost());
 
-describe('GET /convert', () => {
+describe('Conversion API', () => {
   beforeEach(() => {
-    process.env.REPOSITORY = '';
-    process.env.REPOSITORY_FILE_PATH = '';
+    helper.clearEnvironmentVariables();
   });
 
-  it('missing input', (done) => {
-    request(app).get('/convert').expect(StatusCodes.BAD_REQUEST, done);
+  it('SHOULD throw WHEN missing query parameters', async () => {
+    const response = await request(app).post('/convert');
+    expect(response.statusCode).equal(StatusCodes.BAD_REQUEST);
   });
 
-  it('id only input', (done) => {
-    request(app).get('/convert?id=123').expect(StatusCodes.OK, done);
-  });
-
-  it('date only input', (done) => {
-    request(app).get('/convert?date=2022-10-17').expect(StatusCodes.OK, done);
-  });
-
-  it('invalid repository', (done) => {
-    process.env.REPOSITORY = 'TEST';
-    request(app)
-      .get('/convert?id=123')
-      .expect(StatusCodes.NOT_IMPLEMENTED, done);
-  });
-
-  it('missing json file', (done) => {
-    process.env.REPOSITORY = 'JSON';
-    request(app)
-      .get('/convert?id=123')
-      .expect(StatusCodes.INSUFFICIENT_STORAGE, done);
-  });
-
-  it('json repository id filter', async () => {
-    process.env.REPOSITORY = 'JSON';
-    process.env.REPOSITORY_FILE_PATH = 'tests/data/db.json';
-    const response = await request(app).get(
-      '/convert?id=3c5fddc7-c535-4b09-b7f1-8c112bb117a6'
-    );
-    expect(response.statusCode).equal(StatusCodes.OK);
-    expect(response.body).lengthOf(1);
-  });
-
-  it('json repository date filter', async () => {
-    process.env.REPOSITORY = 'JSON';
-    process.env.REPOSITORY_FILE_PATH = 'tests/data/db.json';
-    const response = await request(app).get('/convert?date=2022-10-17');
-    expect(response.statusCode).equal(StatusCodes.OK);
-    expect(response.body).lengthOf(2);
-  });
-
-  it('json repository missing file', async () => {
-    process.env.REPOSITORY = 'JSON';
-    process.env.REPOSITORY_FILE_PATH = 'tests/data/db2.json';
-    const response = await request(app).get('/convert?id=123');
-    expect(response.statusCode).equal(StatusCodes.OK);
-    expect(response.body).lengthOf(0);
-  });
-});
-
-describe('POST /convert', () => {
-  beforeEach(() => {
-    process.env.PROVIDER = '';
-    process.env.EXCHANGERATES_API_KEY = '';
-    process.env.EXCHANGERATES_PREMIUM_PLAN = '';
-    process.env.FIXER_API_KEY = '';
-    process.env.REPOSITORY = '';
-    process.env.REPOSITORY_FILE_PATH = '';
-  });
-
-  it('missing query parameter', (done) => {
-    request(app).post('/convert').expect(StatusCodes.BAD_REQUEST, done);
-  });
-
-  it('invalid provider', (done) => {
+  it('SHOULD throw WHEN provider is invalid', async () => {
     process.env.PROVIDER = 'TEST';
-    request(app)
-      .post('/convert')
-      .send({ from: 'EUR', to: 'USD', amount: 5 })
-      .expect(StatusCodes.NOT_IMPLEMENTED, done);
+    const response = await helper.conversionRequest('EUR', 'USD', 5);
+    expect(response.statusCode).equal(StatusCodes.NOT_IMPLEMENTED);
   });
 
-  it('missing exchangeratesapi api key', (done) => {
+  it('SHOULD throw WHEN ER Api Key is missing', async () => {
     process.env.PROVIDER = ProviderType.EXCHANGERATES;
-    request(app)
-      .post('/convert')
-      .send({ from: 'EUR', to: 'USD', amount: 5 })
-      .expect(StatusCodes.INSUFFICIENT_STORAGE, done);
+    const response = await helper.conversionRequest('EUR', 'USD', 5);
+    expect(response.statusCode).equal(StatusCodes.INSUFFICIENT_STORAGE);
   });
 
-  it('valid exchangeratesapi free input', async () => {
+  it('SHOULD respond WHEN ER Free Api Key exists', async () => {
     process.env.PROVIDER = ProviderType.EXCHANGERATES;
-    process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
-    nock(ExchangeRatesFreeApiBaseUrl)
-      .get('/latest?access_key=ER_KEY&base=EUR&symbols=USD')
-      .reply(StatusCodes.OK, {
-        success: true,
-        rates: { USD: 1.11 },
-      });
-
-    const response = await request(app)
-      .post('/convert')
-      .send({ from: 'EUR', to: 'USD', amount: 5 });
+    process.env.EXCHANGERATES_API_KEY = helper.ER_API_KEY;
+    helper.erLatestRepliedNock('EUR', 'USD', 1.11);
+    const response = await helper.conversionRequest('EUR', 'USD', 5);
     expect(response.statusCode).equal(StatusCodes.OK);
     expect(response.body.amount).almost.equal(5.55);
   });
 
-  it('default provider free input', async () => {
-    process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
-    nock(ExchangeRatesFreeApiBaseUrl)
-      .get('/latest?access_key=ER_KEY&base=EUR&symbols=USD')
-      .reply(StatusCodes.OK, {
-        success: true,
-        rates: { USD: 1.11 },
-      });
-
-    const response = await request(app)
-      .post('/convert')
-      .send({ from: 'EUR', to: 'USD', amount: 5 });
+  it('SHOULD respond WHEN provider not specified', async () => {
+    process.env.EXCHANGERATES_API_KEY = helper.ER_API_KEY;
+    helper.erLatestRepliedNock('EUR', 'USD', 1.11);
+    const response = await helper.conversionRequest('EUR', 'USD', 5);
     expect(response.statusCode).equal(StatusCodes.OK);
     expect(response.body.amount).almost.equal(5.55);
   });
 
-  it('valid exchangeratesapi premium input', async () => {
+  it('SHOULD respond WHEN ER Premium Api Key exists', async () => {
     process.env.PROVIDER = ProviderType.EXCHANGERATES;
-    process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
+    process.env.EXCHANGERATES_API_KEY = helper.ER_API_KEY;
     process.env.EXCHANGERATES_PREMIUM_PLAN = 'true';
-    nock(ExchangeRatesPremiumApiBaseUrl)
-      .get('/convert?access_key=ER_KEY&from=EUR&to=USD&amount=5')
-      .reply(StatusCodes.OK, {
-        success: true,
-        result: 5.55,
-      });
-
-    const response = await request(app)
-      .post('/convert')
-      .send({ from: 'EUR', to: 'USD', amount: 5 });
+    helper.erConvertRepliedNock('EUR', 'USD', 5, 5.55);
+    const response = await helper.conversionRequest('EUR', 'USD', 5);
     expect(response.statusCode).equal(StatusCodes.OK);
     expect(response.body.amount).equal(5.55);
   });
 
-  it('valid exchangeratesapi premium input json file', async () => {
+  it('SHOULD respond WHEN json repository selected', async () => {
     process.env.PROVIDER = ProviderType.EXCHANGERATES;
-    process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
+    process.env.EXCHANGERATES_API_KEY = helper.ER_API_KEY;
     process.env.EXCHANGERATES_PREMIUM_PLAN = 'true';
     process.env.REPOSITORY = 'JSON';
     process.env.REPOSITORY_FILE_PATH = 'tests/temp/db.json';
-    nock(ExchangeRatesPremiumApiBaseUrl)
-      .get('/convert?access_key=ER_KEY&from=EUR&to=USD&amount=5')
-      .reply(StatusCodes.OK, {
-        success: true,
-        result: 5.55,
-      });
-
-    const response = await request(app)
-      .post('/convert')
-      .send({ from: 'EUR', to: 'USD', amount: 5 });
+    helper.erConvertRepliedNock('EUR', 'USD', 5, 5.55);
+    const response = await helper.conversionRequest('EUR', 'USD', 5);
     expect(response.statusCode).equal(StatusCodes.OK);
     expect(response.body.amount).equal(5.55);
     fs.rmSync('tests/temp', { recursive: true, force: true });
   });
 
-  it('failed exchangerates api free input', async () => {
+  it('SHOULD throw WHEN ER Free version requires upgrade', async () => {
     process.env.PROVIDER = ProviderType.EXCHANGERATES;
-    process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
-    nock(ExchangeRatesFreeApiBaseUrl)
-      .get('/latest?access_key=ER_KEY&base=EUR&symbols=USD')
-      .reply(StatusCodes.OK, {
-        success: false,
-        error: {
-          info: 'Your monthly API request volume has been reached. Please upgrade your plan.',
-        },
-      });
-
-    const response = await request(app)
-      .post('/convert')
-      .send({ from: 'EUR', to: 'USD', amount: 5 });
+    process.env.EXCHANGERATES_API_KEY = helper.ER_API_KEY;
+    helper
+      .erLatestNock('EUR', 'USD')
+      .reply(StatusCodes.OK, helper.ER_UPGRADE_BODY);
+    const response = await helper.conversionRequest('EUR', 'USD', 5);
     expect(response.statusCode).equal(StatusCodes.FAILED_DEPENDENCY);
   });
 
-  it('failed exchangerates api premium input', async () => {
+  it('SHOULD throw WHEN ER Premium version requires upgrade', async () => {
     process.env.PROVIDER = ProviderType.EXCHANGERATES;
-    process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
+    process.env.EXCHANGERATES_API_KEY = helper.ER_API_KEY;
     process.env.EXCHANGERATES_PREMIUM_PLAN = 'true';
-    nock(ExchangeRatesPremiumApiBaseUrl)
-      .get('/convert?access_key=ER_KEY&from=EUR&to=USD&amount=5')
-      .reply(StatusCodes.OK, {
-        success: false,
-        error: {
-          info: 'Your monthly API request volume has been reached. Please upgrade your plan.',
-        },
-      });
-
-    const response = await request(app)
-      .post('/convert')
-      .send({ from: 'EUR', to: 'USD', amount: 5 });
+    helper
+      .erConvertNock('EUR', 'USD', 5)
+      .reply(StatusCodes.OK, helper.ER_UPGRADE_BODY);
+    const response = await helper.conversionRequest('EUR', 'USD', 5);
     expect(response.statusCode).equal(StatusCodes.FAILED_DEPENDENCY);
   });
 
-  it('missing fixer api key', (done) => {
+  it('SHOULD throw WHEN FX Api Key is missing', async () => {
     process.env.PROVIDER = ProviderType.FIXER;
-    request(app)
-      .post('/convert')
-      .send({ from: 'EUR', to: 'USD', amount: 5 })
-      .expect(StatusCodes.INSUFFICIENT_STORAGE, done);
+    const response = await helper.conversionRequest('EUR', 'USD', 5);
+    expect(response.statusCode).equal(StatusCodes.INSUFFICIENT_STORAGE);
   });
 
-  it('valid fixer input', async () => {
+  it('SHOULD respond WHEN FX Api Key exists', async () => {
     process.env.PROVIDER = ProviderType.FIXER;
-    process.env.FIXER_API_KEY = 'FX_KEY';
-    nock(FixerApiBaseUrl)
-      .get('/convert?from=EUR&to=USD&amount=5')
-      .reply(StatusCodes.OK, {
-        success: true,
-        result: 5.55,
-      });
-    const response = await request(app)
-      .post('/convert')
-      .send({ from: 'EUR', to: 'USD', amount: 5 });
+    process.env.FIXER_API_KEY = helper.FX_API_KEY;
+    helper.fxConvertRepliedNock('EUR', 'USD', 5, 5.55);
+    const response = await helper.conversionRequest('EUR', 'USD', 5);
     expect(response.statusCode).equal(StatusCodes.OK);
     expect(response.body.amount).equal(5.55);
   });
 
-  it('failed fixer api input', async () => {
+  it('SHOULD throw WHEN FX requires upgrade', async () => {
     process.env.PROVIDER = ProviderType.FIXER;
-    process.env.FIXER_API_KEY = 'FX_KEY';
-    nock(FixerApiBaseUrl)
-      .get('/convert?from=EUR&to=USD&amount=5')
-      .reply(StatusCodes.OK, {
-        success: false,
-        error: {
-          info: 'Your monthly API request volume has been reached. Please upgrade your plan.',
-        },
-      });
-
-    const response = await request(app)
-      .post('/convert')
-      .send({ from: 'EUR', to: 'USD', amount: 5 });
+    process.env.FIXER_API_KEY = helper.FX_API_KEY;
+    helper
+      .fxConvertNock('EUR', 'USD', 5)
+      .reply(StatusCodes.OK, helper.FX_UPGRADE_BODY);
+    const response = await helper.conversionRequest('EUR', 'USD', 5);
     expect(response.statusCode).equal(StatusCodes.FAILED_DEPENDENCY);
+  });
+});
+
+describe('Conversion List API', () => {
+  beforeEach(() => {
+    helper.clearEnvironmentVariables();
+  });
+
+  it('SHOULD throw WHEN missing id and date', async () => {
+    const response = await helper.conversionListRequest();
+    expect(response.statusCode).equal(StatusCodes.BAD_REQUEST);
+  });
+
+  it('SHOULD throw WHEN only id specified', async () => {
+    const response = await helper.conversionListRequest({ id: '123' });
+    expect(response.statusCode).equal(StatusCodes.OK);
+  });
+
+  it('SHOULD throw WHEN only date specified', async () => {
+    const response = await helper.conversionListRequest({ date: '2022-10-17' });
+    expect(response.statusCode).equal(StatusCodes.OK);
+  });
+
+  it('SHOULD respond WHEN repository is invalid', async () => {
+    process.env.REPOSITORY = 'TEST';
+    const response = await helper.conversionListRequest({ id: '123' });
+    expect(response.statusCode).equal(StatusCodes.NOT_IMPLEMENTED);
+  });
+
+  it('SHOULD throw WHEN JSON file name is missing', async () => {
+    process.env.REPOSITORY = 'JSON';
+    const response = await helper.conversionListRequest({ id: '123' });
+    expect(response.statusCode).equal(StatusCodes.INSUFFICIENT_STORAGE);
+  });
+
+  it('SHOULD respond WHEN data exists with id filter', async () => {
+    process.env.REPOSITORY = 'JSON';
+    process.env.REPOSITORY_FILE_PATH = 'tests/data/db.json';
+    const response = await helper.conversionListRequest({
+      id: '3c5fddc7-c535-4b09-b7f1-8c112bb117a6',
+    });
+    expect(response.statusCode).equal(StatusCodes.OK);
+    expect(response.body).lengthOf(1);
+  });
+
+  it('SHOULD respond WHEN data exists with date filter', async () => {
+    process.env.REPOSITORY = 'JSON';
+    process.env.REPOSITORY_FILE_PATH = 'tests/data/db.json';
+    const response = await helper.conversionListRequest({ date: '2022-10-17' });
+    expect(response.statusCode).equal(StatusCodes.OK);
+    expect(response.body).lengthOf(2);
+  });
+
+  it('SHOULD respond WHEN JSON file does not exist', async () => {
+    process.env.REPOSITORY = 'JSON';
+    process.env.REPOSITORY_FILE_PATH = 'tests/data/db2.json';
+    const response = await helper.conversionListRequest({ id: '123' });
+    expect(response.statusCode).equal(StatusCodes.OK);
+    expect(response.body).lengthOf(0);
   });
 });

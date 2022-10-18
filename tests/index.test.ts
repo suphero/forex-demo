@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import http, { Server } from 'http';
 import { StatusCodes } from 'http-status-codes';
 
-describe('server', () => {
+describe('Server', () => {
   let server: Server;
   before(() => {
     process.env.PORT = '8000';
@@ -13,7 +13,7 @@ describe('server', () => {
     server.close();
   });
 
-  it('should return 404', (done) => {
+  it('SHOULD throw WHEN home page requested', (done) => {
     http.get('http://localhost:8000', (res) => {
       expect(res.statusCode).equal(StatusCodes.NOT_FOUND);
       done();

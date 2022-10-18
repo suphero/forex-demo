@@ -1,130 +1,84 @@
 import { describe, it, beforeEach } from 'mocha';
+import { expect } from 'chai';
 import request from 'supertest';
-import nock from 'nock';
 import { StatusCodes } from 'http-status-codes';
 import app from '../src/app';
-import {
-  ExchangeRatesFreeApiBaseUrl,
-  ExchangeRatesPremiumApiBaseUrl,
-  FixerApiBaseUrl,
-  ProviderType,
-} from '../src/lib/helpers/constants';
+import { ProviderType } from '../src/lib/helpers/constants';
+import * as helper from './helper';
 
-describe('GET /exchange', () => {
+describe('Exchange Rate API', () => {
   beforeEach(() => {
-    process.env.PROVIDER = '';
-    process.env.EXCHANGERATES_API_KEY = '';
-    process.env.EXCHANGERATES_PREMIUM_PLAN = '';
-    process.env.FIXER_API_KEY = '';
-    process.env.REPOSITORY = '';
-    process.env.REPOSITORY_FILE_PATH = '';
+    helper.clearEnvironmentVariables();
   });
 
-  it('missing query parameter', (done) => {
-    request(app).get('/exchange').expect(StatusCodes.BAD_REQUEST, done);
+  it('SHOULD throw WHEN missing query parameters', async () => {
+    const response = await request(app).get('/exchange');
+    expect(response.statusCode).equal(StatusCodes.BAD_REQUEST);
   });
 
-  it('invalid provider', (done) => {
+  it('SHOULD throw WHEN provider is invalid', async () => {
     process.env.PROVIDER = 'TEST';
-    request(app)
-      .get('/exchange?base=EUR&symbol=USD')
-      .expect(StatusCodes.NOT_IMPLEMENTED, done);
+    const response = await helper.exchangeRequest('EUR', 'USD');
+    expect(response.statusCode).equal(StatusCodes.NOT_IMPLEMENTED);
   });
 
-  it('missing exchangeratesapi api key', (done) => {
+  it('SHOULD throw WHEN ER Api Key is missing', async () => {
     process.env.PROVIDER = ProviderType.EXCHANGERATES;
-    request(app)
-      .get('/exchange?base=EUR&symbol=USD')
-      .expect(StatusCodes.INSUFFICIENT_STORAGE, done);
+    const response = await helper.exchangeRequest('EUR', 'USD');
+    expect(response.statusCode).equal(StatusCodes.INSUFFICIENT_STORAGE);
   });
 
-  it('valid exchangeratesapi free input', (done) => {
+  it('SHOULD respond WHEN ER Free Api Key exists', async () => {
     process.env.PROVIDER = ProviderType.EXCHANGERATES;
-    process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
-    nock(ExchangeRatesFreeApiBaseUrl)
-      .get('/latest?access_key=ER_KEY&base=EUR&symbols=USD')
-      .reply(StatusCodes.OK, {
-        success: true,
-        base: 'EUR',
-        rates: { USD: 1.2345 },
-      });
-
-    request(app)
-      .get('/exchange?base=EUR&symbol=USD')
-      .expect(StatusCodes.OK, { rate: 1.2345 }, done);
+    process.env.EXCHANGERATES_API_KEY = helper.ER_API_KEY;
+    helper.erLatestRepliedNock('EUR', 'USD', 1.2345);
+    const response = await helper.exchangeRequest('EUR', 'USD');
+    expect(response.statusCode).equal(StatusCodes.OK);
+    expect(response.body.rate).equal(1.2345);
   });
 
-  it('valid exchangeratesapi premium input', (done) => {
+  it('SHOULD respond WHEN ER Premium Api Key exists', async () => {
     process.env.PROVIDER = ProviderType.EXCHANGERATES;
-    process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
+    process.env.EXCHANGERATES_API_KEY = helper.ER_API_KEY;
     process.env.EXCHANGERATES_PREMIUM_PLAN = 'true';
-    nock(ExchangeRatesPremiumApiBaseUrl)
-      .get('/latest?access_key=ER_KEY&base=EUR&symbols=USD')
-      .reply(StatusCodes.OK, {
-        success: true,
-        base: 'EUR',
-        rates: { USD: 1.2345 },
-      });
-
-    request(app)
-      .get('/exchange?base=EUR&symbol=USD')
-      .expect(StatusCodes.OK, { rate: 1.2345 }, done);
+    helper.erLatestRepliedNock('EUR', 'USD', 1.2345, true);
+    const response = await helper.exchangeRequest('EUR', 'USD');
+    expect(response.statusCode).equal(StatusCodes.OK);
+    expect(response.body.rate).equal(1.2345);
   });
 
-  it('failed exchangerates api input', (done) => {
+  it('SHOULD throw WHEN ER requires upgrade', async () => {
     process.env.PROVIDER = ProviderType.EXCHANGERATES;
-    process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
-    nock(ExchangeRatesFreeApiBaseUrl)
-      .get('/latest?access_key=ER_KEY&base=EUR&symbols=USD')
-      .reply(StatusCodes.OK, {
-        success: false,
-        error: {
-          info: 'Your monthly API request volume has been reached. Please upgrade your plan.',
-        },
-      });
-
-    request(app)
-      .get('/exchange?base=EUR&symbol=USD')
-      .expect(StatusCodes.FAILED_DEPENDENCY, done);
+    process.env.EXCHANGERATES_API_KEY = helper.ER_API_KEY;
+    helper
+      .erLatestNock('EUR', 'USD')
+      .reply(StatusCodes.OK, helper.ER_UPGRADE_BODY);
+    const response = await helper.exchangeRequest('EUR', 'USD');
+    expect(response.statusCode).equal(StatusCodes.FAILED_DEPENDENCY);
   });
 
-  it('missing fixer api key', (done) => {
+  it('SHOULD throw WHEN FX Api Key is missing', async () => {
     process.env.PROVIDER = ProviderType.FIXER;
-    request(app)
-      .get('/exchange?base=EUR&symbol=USD')
-      .expect(StatusCodes.INSUFFICIENT_STORAGE, done);
+    const response = await helper.exchangeRequest('EUR', 'USD');
+    expect(response.statusCode).equal(StatusCodes.INSUFFICIENT_STORAGE);
   });
 
-  it('valid fixer input', (done) => {
+  it('SHOULD respond WHEN FX Api Key exists', async () => {
     process.env.PROVIDER = ProviderType.FIXER;
-    process.env.FIXER_API_KEY = 'FX_KEY';
-    nock(FixerApiBaseUrl)
-      .get('/latest?base=EUR&symbols=USD')
-      .reply(StatusCodes.OK, {
-        success: true,
-        base: 'EUR',
-        rates: { USD: 1.2345 },
-      });
-
-    request(app)
-      .get('/exchange?base=EUR&symbol=USD')
-      .expect(StatusCodes.OK, { rate: 1.2345 }, done);
+    process.env.FIXER_API_KEY = helper.FX_API_KEY;
+    helper.fxLatestRepliedNock('EUR', 'USD', 1.2345);
+    const response = await helper.exchangeRequest('EUR', 'USD');
+    expect(response.statusCode).equal(StatusCodes.OK);
+    expect(response.body.rate).equal(1.2345);
   });
 
-  it('failed fixer api input', (done) => {
+  it('SHOULD throw WHEN FX requires upgrade', async () => {
     process.env.PROVIDER = ProviderType.FIXER;
-    process.env.FIXER_API_KEY = 'FX_KEY';
-    nock(FixerApiBaseUrl)
-      .get('/latest?base=EUR&symbols=USD')
-      .reply(StatusCodes.OK, {
-        success: false,
-        error: {
-          info: 'Your monthly API request volume has been reached. Please upgrade your plan.',
-        },
-      });
-
-    request(app)
-      .get('/exchange?base=EUR&symbol=USD')
-      .expect(StatusCodes.FAILED_DEPENDENCY, done);
+    process.env.FIXER_API_KEY = helper.FX_API_KEY;
+    helper
+      .fxLatestNock('EUR', 'USD')
+      .reply(StatusCodes.OK, helper.FX_UPGRADE_BODY);
+    const response = await helper.exchangeRequest('EUR', 'USD');
+    expect(response.statusCode).equal(StatusCodes.FAILED_DEPENDENCY);
   });
 });
