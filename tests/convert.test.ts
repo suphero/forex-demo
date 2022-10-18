@@ -49,7 +49,7 @@ describe('GET /convert', () => {
 
   it('json repository id filter', async () => {
     process.env.REPOSITORY = 'JSON';
-    process.env.REPOSITORY_FILE_PATH = 'data/db.json';
+    process.env.REPOSITORY_FILE_PATH = 'tests/data/db.json';
     const response = await request(app).get(
       '/convert?id=3c5fddc7-c535-4b09-b7f1-8c112bb117a6'
     );
@@ -59,7 +59,7 @@ describe('GET /convert', () => {
 
   it('json repository date filter', async () => {
     process.env.REPOSITORY = 'JSON';
-    process.env.REPOSITORY_FILE_PATH = 'data/db.json';
+    process.env.REPOSITORY_FILE_PATH = 'tests/data/db.json';
     const response = await request(app).get('/convert?date=2022-10-17');
     expect(response.statusCode).equal(200);
     expect(response.body).lengthOf(2);
@@ -67,7 +67,7 @@ describe('GET /convert', () => {
 
   it('json repository missing file', async () => {
     process.env.REPOSITORY = 'JSON';
-    process.env.REPOSITORY_FILE_PATH = 'data/db2.json';
+    process.env.REPOSITORY_FILE_PATH = 'tests/data/db2.json';
     const response = await request(app).get('/convert?id=123');
     expect(response.statusCode).equal(200);
     expect(response.body).lengthOf(0);
@@ -160,7 +160,7 @@ describe('POST /convert', () => {
     process.env.EXCHANGERATES_API_KEY = 'ER_KEY';
     process.env.EXCHANGERATES_PREMIUM_PLAN = 'true';
     process.env.REPOSITORY = 'JSON';
-    process.env.REPOSITORY_FILE_PATH = 'tests/convert/temp/db.json';
+    process.env.REPOSITORY_FILE_PATH = 'tests/temp/db.json';
     nock(ExchangeRatesPremiumApiBaseUrl)
       .get('/convert?access_key=ER_KEY&from=EUR&to=USD&amount=5')
       .reply(StatusCodes.OK, {
@@ -173,7 +173,7 @@ describe('POST /convert', () => {
       .send({ from: 'EUR', to: 'USD', amount: 5 });
     expect(response.statusCode).equal(StatusCodes.OK);
     expect(response.body.amount).equal(5.55);
-    fs.rmSync('tests/convert/temp', { recursive: true, force: true });
+    fs.rmSync('tests/temp', { recursive: true, force: true });
   });
 
   it('failed exchangerates api free input', async () => {
