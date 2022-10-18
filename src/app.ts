@@ -1,5 +1,6 @@
 import createError from 'http-errors';
 import express, { json, urlencoded } from 'express';
+import { StatusCodes } from 'http-status-codes';
 
 import conversionRouter from './convert/routes';
 import exchangeRouter from './exchange/routes';
@@ -14,7 +15,7 @@ app.use('/convert', conversionRouter);
 app.use('/exchange', exchangeRouter);
 
 app.use((_req, _res, next) => {
-  next(createError(404));
+  next(createError(StatusCodes.NOT_FOUND));
 });
 
 app.use(handleError);
