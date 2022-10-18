@@ -1,14 +1,6 @@
+forex-demo / [Modules](modules.md)
+
 # Forex Demo
-
-## Commands
-
-- `npm run dev`: Start Development Server
-- `npm run build`: TS compile to dist folder
-- `npm start`: Start production server
-- `npm run lint`: Prettify codebase
-- `npm test`: Run tests
-- `npm run test:watch`: Run tests in watch mode
-- `npm run doc`: Generate documentation under docs/api folder
 
 ## Environmental Variables
 
@@ -49,6 +41,7 @@ This variable is required when the [Repository](#repository-optional) selected J
 
 ## TODO
 
+- [ ] Endpoint Documentation
 - [ ] Test Case Names & refactor
 - [ ] Joi Validation Middleware
 - [ ] Joi.alternatives Conflicting error message
