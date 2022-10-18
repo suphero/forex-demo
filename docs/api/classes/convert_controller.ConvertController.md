@@ -39,7 +39,7 @@ Convert Controller Constructor
 
 #### Defined in
 
-[src/convert/controller.ts:16](https://github.com/suphero/forex-demo/blob/3cd49dc/src/convert/controller.ts#L16)
+[src/convert/controller.ts:16](https://github.com/suphero/forex-demo/blob/1257222/src/convert/controller.ts#L16)
 
 ## Properties
 
@@ -49,7 +49,7 @@ Convert Controller Constructor
 
 #### Defined in
 
-[src/convert/controller.ts:23](https://github.com/suphero/forex-demo/blob/3cd49dc/src/convert/controller.ts#L23)
+[src/convert/controller.ts:23](https://github.com/suphero/forex-demo/blob/1257222/src/convert/controller.ts#L23)
 
 ---
 
@@ -59,7 +59,7 @@ Convert Controller Constructor
 
 #### Defined in
 
-[src/convert/controller.ts:24](https://github.com/suphero/forex-demo/blob/3cd49dc/src/convert/controller.ts#L24)
+[src/convert/controller.ts:24](https://github.com/suphero/forex-demo/blob/1257222/src/convert/controller.ts#L24)
 
 ## Methods
 
@@ -81,7 +81,7 @@ Get Filtered Transactions
 
 #### Defined in
 
-[src/convert/controller.ts:31](https://github.com/suphero/forex-demo/blob/3cd49dc/src/convert/controller.ts#L31)
+[src/convert/controller.ts:31](https://github.com/suphero/forex-demo/blob/1257222/src/convert/controller.ts#L31)
 
 ---
 
@@ -105,4 +105,4 @@ Convert currency
 
 #### Defined in
 
-[src/convert/controller.ts:49](https://github.com/suphero/forex-demo/blob/3cd49dc/src/convert/controller.ts#L49)
+[src/convert/controller.ts:49](https://github.com/suphero/forex-demo/blob/1257222/src/convert/controller.ts#L49)

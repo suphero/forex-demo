@@ -23,7 +23,7 @@ Transaction model
 
 #### Defined in
 
-[src/convert/model.ts:8](https://github.com/suphero/forex-demo/blob/3cd49dc/src/convert/model.ts#L8)
+[src/convert/model.ts:8](https://github.com/suphero/forex-demo/blob/1257222/src/convert/model.ts#L8)
 
 ---
 
@@ -40,7 +40,7 @@ Transaction model
 
 #### Defined in
 
-[src/convert/model.ts:9](https://github.com/suphero/forex-demo/blob/3cd49dc/src/convert/model.ts#L9)
+[src/convert/model.ts:9](https://github.com/suphero/forex-demo/blob/1257222/src/convert/model.ts#L9)
 
 ---
 
@@ -50,7 +50,7 @@ Transaction model
 
 #### Defined in
 
-[src/convert/model.ts:7](https://github.com/suphero/forex-demo/blob/3cd49dc/src/convert/model.ts#L7)
+[src/convert/model.ts:7](https://github.com/suphero/forex-demo/blob/1257222/src/convert/model.ts#L7)
 
 ---
 
@@ -67,4 +67,4 @@ Transaction model
 
 #### Defined in
 
-[src/convert/model.ts:13](https://github.com/suphero/forex-demo/blob/3cd49dc/src/convert/model.ts#L13)
+[src/convert/model.ts:13](https://github.com/suphero/forex-demo/blob/1257222/src/convert/model.ts#L13)
