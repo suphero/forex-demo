@@ -35,7 +35,7 @@ This variable is required when the [Repository](#repository-optional) selected J
 
 ## TODO
 
-- [ ] Endpoint Documentation / Postman schema
+- [ ] Endpoint Documentation
 - [ ] Test Case Names & refactor
 - [ ] Joi Validation Middleware
 - [ ] Joi.alternatives Conflicting error message
