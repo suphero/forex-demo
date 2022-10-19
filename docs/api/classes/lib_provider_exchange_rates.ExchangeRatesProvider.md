@@ -52,7 +52,7 @@ Constructor
 
 #### Defined in
 
-[src/lib/provider/exchange-rates.ts:18](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/exchange-rates.ts#L18)
+[src/lib/provider/exchange-rates.ts:18](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/exchange-rates.ts#L18)
 
 ## Properties
 
@@ -62,7 +62,7 @@ Constructor
 
 #### Defined in
 
-[src/lib/provider/exchange-rates.ts:32](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/exchange-rates.ts#L32)
+[src/lib/provider/exchange-rates.ts:32](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/exchange-rates.ts#L32)
 
 ---
 
@@ -72,7 +72,7 @@ Constructor
 
 #### Defined in
 
-[src/lib/provider/exchange-rates.ts:34](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/exchange-rates.ts#L34)
+[src/lib/provider/exchange-rates.ts:34](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/exchange-rates.ts#L34)
 
 ---
 
@@ -82,7 +82,7 @@ Constructor
 
 #### Defined in
 
-[src/lib/provider/exchange-rates.ts:33](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/exchange-rates.ts#L33)
+[src/lib/provider/exchange-rates.ts:33](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/exchange-rates.ts#L33)
 
 ## Methods
 
@@ -110,7 +110,7 @@ Convert exchange
 
 #### Defined in
 
-[src/lib/provider/exchange-rates.ts:58](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/exchange-rates.ts#L58)
+[src/lib/provider/exchange-rates.ts:58](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/exchange-rates.ts#L58)
 
 ---
 
@@ -134,7 +134,7 @@ Convert exchange via latest endpoint
 
 #### Defined in
 
-[src/lib/provider/exchange-rates.ts:90](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/exchange-rates.ts#L90)
+[src/lib/provider/exchange-rates.ts:90](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/exchange-rates.ts#L90)
 
 ---
 
@@ -158,7 +158,7 @@ Convert exchange via API. Free version doesn't support this endpoint
 
 #### Defined in
 
-[src/lib/provider/exchange-rates.ts:73](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/exchange-rates.ts#L73)
+[src/lib/provider/exchange-rates.ts:73](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/exchange-rates.ts#L73)
 
 ---
 
@@ -185,4 +185,4 @@ Get Latest Exchange Rate
 
 #### Defined in
 
-[src/lib/provider/exchange-rates.ts:42](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/exchange-rates.ts#L42)
+[src/lib/provider/exchange-rates.ts:42](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/exchange-rates.ts#L42)

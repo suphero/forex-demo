@@ -21,7 +21,7 @@ Transaction DTO Model
 
 #### Defined in
 
-[src/convert/model.ts:24](https://github.com/suphero/forex-demo/blob/2d16766/src/convert/model.ts#L24)
+[src/convert/model.ts:24](https://github.com/suphero/forex-demo/blob/2ac0f42/src/convert/model.ts#L24)
 
 ---
 
@@ -31,4 +31,4 @@ Transaction DTO Model
 
 #### Defined in
 
-[src/convert/model.ts:23](https://github.com/suphero/forex-demo/blob/2d16766/src/convert/model.ts#L23)
+[src/convert/model.ts:23](https://github.com/suphero/forex-demo/blob/2ac0f42/src/convert/model.ts#L23)

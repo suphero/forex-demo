@@ -40,7 +40,7 @@ App Constructor
 
 #### Defined in
 
-[src/app.ts:24](https://github.com/suphero/forex-demo/blob/2d16766/src/app.ts#L24)
+[src/app.ts:24](https://github.com/suphero/forex-demo/blob/2ac0f42/src/app.ts#L24)
 
 ## Properties
 
@@ -50,7 +50,7 @@ App Constructor
 
 #### Defined in
 
-[src/app.ts:16](https://github.com/suphero/forex-demo/blob/2d16766/src/app.ts#L16)
+[src/app.ts:16](https://github.com/suphero/forex-demo/blob/2ac0f42/src/app.ts#L16)
 
 ---
 
@@ -60,7 +60,7 @@ App Constructor
 
 #### Defined in
 
-[src/app.ts:17](https://github.com/suphero/forex-demo/blob/2d16766/src/app.ts#L17)
+[src/app.ts:17](https://github.com/suphero/forex-demo/blob/2ac0f42/src/app.ts#L17)
 
 ## Methods
 
@@ -76,7 +76,7 @@ Initialize Controllers
 
 #### Defined in
 
-[src/app.ts:44](https://github.com/suphero/forex-demo/blob/2d16766/src/app.ts#L44)
+[src/app.ts:44](https://github.com/suphero/forex-demo/blob/2ac0f42/src/app.ts#L44)
 
 ---
 
@@ -92,7 +92,7 @@ Initialize Error Handlers
 
 #### Defined in
 
-[src/app.ts:53](https://github.com/suphero/forex-demo/blob/2d16766/src/app.ts#L53)
+[src/app.ts:53](https://github.com/suphero/forex-demo/blob/2ac0f42/src/app.ts#L53)
 
 ---
 
@@ -108,4 +108,4 @@ Initialize Middlewares
 
 #### Defined in
 
-[src/app.ts:36](https://github.com/suphero/forex-demo/blob/2d16766/src/app.ts#L36)
+[src/app.ts:36](https://github.com/suphero/forex-demo/blob/2ac0f42/src/app.ts#L36)

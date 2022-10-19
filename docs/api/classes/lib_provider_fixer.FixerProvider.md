@@ -48,7 +48,7 @@ Constructor
 
 #### Defined in
 
-[src/lib/provider/fixer.ts:14](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/fixer.ts#L14)
+[src/lib/provider/fixer.ts:14](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/fixer.ts#L14)
 
 ## Properties
 
@@ -58,7 +58,7 @@ Constructor
 
 #### Defined in
 
-[src/lib/provider/fixer.ts:22](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/fixer.ts#L22)
+[src/lib/provider/fixer.ts:22](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/fixer.ts#L22)
 
 ---
 
@@ -68,7 +68,7 @@ Constructor
 
 #### Defined in
 
-[src/lib/provider/fixer.ts:23](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/fixer.ts#L23)
+[src/lib/provider/fixer.ts:23](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/fixer.ts#L23)
 
 ## Methods
 
@@ -96,7 +96,7 @@ Convert exchange
 
 #### Defined in
 
-[src/lib/provider/fixer.ts:48](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/fixer.ts#L48)
+[src/lib/provider/fixer.ts:48](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/fixer.ts#L48)
 
 ---
 
@@ -123,4 +123,4 @@ Get Latest Exchange Rate
 
 #### Defined in
 
-[src/lib/provider/fixer.ts:31](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/fixer.ts#L31)
+[src/lib/provider/fixer.ts:31](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/fixer.ts#L31)

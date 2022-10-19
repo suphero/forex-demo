@@ -31,4 +31,4 @@ Handle Error
 
 #### Defined in
 
-[src/lib/helpers/errorHandler.ts:11](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/helpers/errorHandler.ts#L11)
+[src/lib/helpers/errorHandler.ts:11](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/helpers/errorHandler.ts#L11)

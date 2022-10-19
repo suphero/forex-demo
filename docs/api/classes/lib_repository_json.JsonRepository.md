@@ -68,7 +68,7 @@ Json Repository Constructor
 
 #### Defined in
 
-[src/lib/repository/json.ts:21](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/repository/json.ts#L21)
+[src/lib/repository/json.ts:21](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/repository/json.ts#L21)
 
 ## Properties
 
@@ -78,7 +78,7 @@ Json Repository Constructor
 
 #### Defined in
 
-[src/lib/repository/json.ts:36](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/repository/json.ts#L36)
+[src/lib/repository/json.ts:36](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/repository/json.ts#L36)
 
 ---
 
@@ -88,7 +88,7 @@ Json Repository Constructor
 
 #### Defined in
 
-[src/lib/repository/json.ts:35](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/repository/json.ts#L35)
+[src/lib/repository/json.ts:35](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/repository/json.ts#L35)
 
 ---
 
@@ -98,7 +98,7 @@ Json Repository Constructor
 
 #### Defined in
 
-[src/lib/repository/json.ts:34](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/repository/json.ts#L34)
+[src/lib/repository/json.ts:34](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/repository/json.ts#L34)
 
 ## Methods
 
@@ -124,7 +124,7 @@ Add Data
 
 #### Defined in
 
-[src/lib/repository/json.ts:77](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/repository/json.ts#L77)
+[src/lib/repository/json.ts:77](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/repository/json.ts#L77)
 
 ---
 
@@ -150,7 +150,7 @@ Filter Data
 
 #### Defined in
 
-[src/lib/repository/json.ts:88](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/repository/json.ts#L88)
+[src/lib/repository/json.ts:88](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/repository/json.ts#L88)
 
 ---
 
@@ -168,7 +168,7 @@ Parent Folder
 
 #### Defined in
 
-[src/lib/repository/json.ts:42](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/repository/json.ts#L42)
+[src/lib/repository/json.ts:42](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/repository/json.ts#L42)
 
 ---
 
@@ -186,7 +186,7 @@ Read File Content
 
 #### Defined in
 
-[src/lib/repository/json.ts:50](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/repository/json.ts#L50)
+[src/lib/repository/json.ts:50](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/repository/json.ts#L50)
 
 ---
 
@@ -208,4 +208,4 @@ Write Content to File
 
 #### Defined in
 
-[src/lib/repository/json.ts:64](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/repository/json.ts#L64)
+[src/lib/repository/json.ts:64](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/repository/json.ts#L64)

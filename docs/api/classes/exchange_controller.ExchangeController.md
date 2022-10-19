@@ -36,7 +36,7 @@ Exchange Controller Constructor
 
 #### Defined in
 
-[src/exchange/controller.ts:12](https://github.com/suphero/forex-demo/blob/2d16766/src/exchange/controller.ts#L12)
+[src/exchange/controller.ts:12](https://github.com/suphero/forex-demo/blob/2ac0f42/src/exchange/controller.ts#L12)
 
 ## Properties
 
@@ -46,7 +46,7 @@ Exchange Controller Constructor
 
 #### Defined in
 
-[src/exchange/controller.ts:15](https://github.com/suphero/forex-demo/blob/2d16766/src/exchange/controller.ts#L15)
+[src/exchange/controller.ts:15](https://github.com/suphero/forex-demo/blob/2ac0f42/src/exchange/controller.ts#L15)
 
 ## Methods
 
@@ -69,4 +69,4 @@ Get Latest Exchange Rate
 
 #### Defined in
 
-[src/exchange/controller.ts:23](https://github.com/suphero/forex-demo/blob/2d16766/src/exchange/controller.ts#L23)
+[src/exchange/controller.ts:23](https://github.com/suphero/forex-demo/blob/2ac0f42/src/exchange/controller.ts#L23)
