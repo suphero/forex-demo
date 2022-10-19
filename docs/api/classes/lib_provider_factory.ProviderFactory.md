@@ -36,4 +36,4 @@ Create Exchange Rate Provider
 
 #### Defined in
 
-[src/lib/provider/factory.ts:15](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/provider/factory.ts#L15)
+[src/lib/provider/factory.ts:15](https://github.com/suphero/forex-demo/blob/ef493db/src/lib/provider/factory.ts#L15)

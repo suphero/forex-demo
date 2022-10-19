@@ -26,7 +26,7 @@ Routes Base
 
 #### Defined in
 
-[src/lib/helpers/express.ts:7](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/helpers/express.ts#L7)
+[src/lib/helpers/express.ts:7](https://github.com/suphero/forex-demo/blob/ef493db/src/lib/helpers/express.ts#L7)
 
 ---
 
@@ -36,4 +36,4 @@ Routes Base
 
 #### Defined in
 
-[src/lib/helpers/express.ts:8](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/helpers/express.ts#L8)
+[src/lib/helpers/express.ts:8](https://github.com/suphero/forex-demo/blob/ef493db/src/lib/helpers/express.ts#L8)

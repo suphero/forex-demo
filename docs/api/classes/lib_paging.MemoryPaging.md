@@ -58,4 +58,4 @@ Paged data
 
 #### Defined in
 
-[src/lib/paging.ts:16](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/paging.ts#L16)
+[src/lib/paging.ts:16](https://github.com/suphero/forex-demo/blob/ef493db/src/lib/paging.ts#L16)

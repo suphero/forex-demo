@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/lib/helpers/joi.ts:4](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/helpers/joi.ts#L4)
+[src/lib/helpers/joi.ts:4](https://github.com/suphero/forex-demo/blob/ef493db/src/lib/helpers/joi.ts#L4)

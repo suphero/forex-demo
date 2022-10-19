@@ -21,7 +21,7 @@ Provider Types
 
 #### Defined in
 
-[src/lib/helpers/constants.ts:10](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/helpers/constants.ts#L10)
+[src/lib/helpers/constants.ts:10](https://github.com/suphero/forex-demo/blob/ef493db/src/lib/helpers/constants.ts#L10)
 
 ---
 
@@ -31,4 +31,4 @@ Provider Types
 
 #### Defined in
 
-[src/lib/helpers/constants.ts:11](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/helpers/constants.ts#L11)
+[src/lib/helpers/constants.ts:11](https://github.com/suphero/forex-demo/blob/ef493db/src/lib/helpers/constants.ts#L11)

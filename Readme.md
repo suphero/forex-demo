@@ -56,7 +56,3 @@ This variable is required when the [Provider](#provider-optional) selected FX.
 This variable is required when the [Repository](#repository-optional) selected JSON.
 
 `REPOSITORY_FILE_PATH=JSON_PATH`
-
-## TODO
-
-- [ ] next(error)'lardan kurtul

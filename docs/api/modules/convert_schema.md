@@ -25,7 +25,7 @@ Joi Schema
 
 #### Defined in
 
-[src/convert/schema.ts:20](https://github.com/suphero/forex-demo/blob/2ac0f42/src/convert/schema.ts#L20)
+[src/convert/schema.ts:22](https://github.com/suphero/forex-demo/blob/ef493db/src/convert/schema.ts#L22)
 
 ---
 
@@ -43,4 +43,4 @@ Joi Schema
 
 #### Defined in
 
-[src/convert/schema.ts:7](https://github.com/suphero/forex-demo/blob/2ac0f42/src/convert/schema.ts#L7)
+[src/convert/schema.ts:7](https://github.com/suphero/forex-demo/blob/ef493db/src/convert/schema.ts#L7)

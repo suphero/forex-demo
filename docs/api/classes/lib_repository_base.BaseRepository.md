@@ -65,7 +65,7 @@ Add Data
 
 #### Defined in
 
-[src/lib/repository/base.ts:11](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/repository/base.ts#L11)
+[src/lib/repository/base.ts:11](https://github.com/suphero/forex-demo/blob/ef493db/src/lib/repository/base.ts#L11)
 
 ---
 
@@ -87,4 +87,4 @@ Filter Data
 
 #### Defined in
 
-[src/lib/repository/base.ts:16](https://github.com/suphero/forex-demo/blob/2ac0f42/src/lib/repository/base.ts#L16)
+[src/lib/repository/base.ts:16](https://github.com/suphero/forex-demo/blob/ef493db/src/lib/repository/base.ts#L16)
