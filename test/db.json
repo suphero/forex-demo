@@ -1,12 +1,12 @@
 [
   {
-    "id": "3c5fddc7-c535-4b09-b7f1-8c112bb117a6",
+    "id": "id1",
     "date": "2022-10-17T20:15:28.031Z",
     "from": { "currency": "EUR", "amount": 5 },
     "to": { "currency": "USD", "amount": 4.91908 }
   },
   {
-    "id": "bf10c99b-d7a1-47eb-8302-3206fe6b84fe",
+    "id": "id2",
     "date": "2022-10-17T20:16:54.879Z",
     "from": { "currency": "EUR", "amount": 5 },
     "to": { "currency": "USD", "amount": 4.9186 }

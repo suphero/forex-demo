@@ -156,9 +156,7 @@ describe('Conversion List API', () => {
   it('SHOULD respond WHEN data exists with id filter', async () => {
     process.env.REPOSITORY = 'JSON';
     process.env.REPOSITORY_FILE_PATH = 'test/db.json';
-    const response = await helper.conversionListRequest({
-      id: '3c5fddc7-c535-4b09-b7f1-8c112bb117a6',
-    });
+    const response = await helper.conversionListRequest({ id: 'id1' });
     expect(response.statusCode).equal(StatusCodes.OK);
     expect(response.body).lengthOf(1);
   });
