@@ -1,5 +1,7 @@
 # Forex Demo
 
+[![wakatime](https://wakatime.com/badge/user/6c7eda5f-06cc-438e-b719-cac475d4bed6/project/fee1309b-c701-49fe-912e-151cc03f0161.svg)](https://wakatime.com/badge/user/6c7eda5f-06cc-438e-b719-cac475d4bed6/project/fee1309b-c701-49fe-912e-151cc03f0161) [![codecov](https://codecov.io/gh/suphero/forex-demo/branch/master/graph/badge.svg?token=PBSKF0QdEn)](https://codecov.io/gh/suphero/forex-demo)
+
 ## Commands
 
 - `npm run dev`: Start Development Server
