@@ -51,7 +51,7 @@ Constructor
 
 #### Defined in
 
-[src/lib/helpers/errors.ts:58](https://github.com/suphero/forex-demo/blob/e73074c/src/lib/helpers/errors.ts#L58)
+[src/lib/helpers/errors.ts:58](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/helpers/errors.ts#L58)
 
 ## Properties
 
@@ -107,7 +107,7 @@ node_modules/typescript/lib/lib.es5.d.ts:1042
 
 #### Defined in
 
-[src/lib/helpers/errors.ts:21](https://github.com/suphero/forex-demo/blob/e73074c/src/lib/helpers/errors.ts#L21)
+[src/lib/helpers/errors.ts:21](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/helpers/errors.ts#L21)
 
 ---
 

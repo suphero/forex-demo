@@ -1,5 +1,5 @@
 import createError from 'http-errors';
-import express, { json, urlencoded } from 'express';
+import express, { json, urlencoded, Application } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { Service } from 'typedi';
 
@@ -13,7 +13,7 @@ import { IRoutes } from './lib/helpers/express';
  */
 @Service()
 export class App {
-  public app: express.Application;
+  public app: Application;
   private routes: IRoutes[];
 
   /**

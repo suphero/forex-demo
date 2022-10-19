@@ -21,7 +21,7 @@ Repository Types
 
 #### Defined in
 
-[src/lib/helpers/constants.ts:19](https://github.com/suphero/forex-demo/blob/e73074c/src/lib/helpers/constants.ts#L19)
+[src/lib/helpers/constants.ts:19](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/helpers/constants.ts#L19)
 
 ---
 
@@ -31,4 +31,4 @@ Repository Types
 
 #### Defined in
 
-[src/lib/helpers/constants.ts:18](https://github.com/suphero/forex-demo/blob/e73074c/src/lib/helpers/constants.ts#L18)
+[src/lib/helpers/constants.ts:18](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/helpers/constants.ts#L18)

@@ -58,12 +58,8 @@ export class ConvertRoutes implements IRoutes {
     next: NextFunction
   ) => {
     try {
-      const value = validateSchema(createSchema(), req.body);
-      const result = await this.controller.createConversion(
-        value.from,
-        value.to,
-        value.amount
-      );
+      const { from, to, amount } = validateSchema(createSchema(), req.body);
+      const result = await this.controller.createConversion(from, to, amount);
       res.json(result);
     } catch (error) {
       next(error);

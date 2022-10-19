@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[src/lib/helpers/constants.ts:1](https://github.com/suphero/forex-demo/blob/e73074c/src/lib/helpers/constants.ts#L1)
+[src/lib/helpers/constants.ts:1](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/helpers/constants.ts#L1)
 
 ---
 
@@ -33,7 +33,7 @@
 
 #### Defined in
 
-[src/lib/helpers/constants.ts:2](https://github.com/suphero/forex-demo/blob/e73074c/src/lib/helpers/constants.ts#L2)
+[src/lib/helpers/constants.ts:2](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/helpers/constants.ts#L2)
 
 ---
 
@@ -43,4 +43,4 @@
 
 #### Defined in
 
-[src/lib/helpers/constants.ts:4](https://github.com/suphero/forex-demo/blob/e73074c/src/lib/helpers/constants.ts#L4)
+[src/lib/helpers/constants.ts:4](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/helpers/constants.ts#L4)

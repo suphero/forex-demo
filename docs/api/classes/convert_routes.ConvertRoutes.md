@@ -44,7 +44,7 @@ Constructor
 
 #### Defined in
 
-[src/convert/routes.ts:20](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L20)
+[src/convert/routes.ts:20](https://github.com/suphero/forex-demo/blob/14e963f/src/convert/routes.ts#L20)
 
 ## Properties
 
@@ -54,7 +54,7 @@ Constructor
 
 #### Defined in
 
-[src/convert/routes.ts:15](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L15)
+[src/convert/routes.ts:15](https://github.com/suphero/forex-demo/blob/14e963f/src/convert/routes.ts#L15)
 
 ---
 
@@ -68,7 +68,7 @@ Constructor
 
 #### Defined in
 
-[src/convert/routes.ts:13](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L13)
+[src/convert/routes.ts:13](https://github.com/suphero/forex-demo/blob/14e963f/src/convert/routes.ts#L13)
 
 ---
 
@@ -82,7 +82,7 @@ Constructor
 
 #### Defined in
 
-[src/convert/routes.ts:14](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L14)
+[src/convert/routes.ts:14](https://github.com/suphero/forex-demo/blob/14e963f/src/convert/routes.ts#L14)
 
 ## Methods
 
@@ -106,7 +106,7 @@ Create Conversion
 
 #### Defined in
 
-[src/convert/routes.ts:55](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L55)
+[src/convert/routes.ts:55](https://github.com/suphero/forex-demo/blob/14e963f/src/convert/routes.ts#L55)
 
 ---
 
@@ -130,7 +130,7 @@ Find Conversions
 
 #### Defined in
 
-[src/convert/routes.ts:39](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L39)
+[src/convert/routes.ts:39](https://github.com/suphero/forex-demo/blob/14e963f/src/convert/routes.ts#L39)
 
 ---
 
@@ -146,4 +146,4 @@ Initialize Routes
 
 #### Defined in
 
-[src/convert/routes.ts:28](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L28)
+[src/convert/routes.ts:28](https://github.com/suphero/forex-demo/blob/14e963f/src/convert/routes.ts#L28)

@@ -55,4 +55,4 @@ Filterer Base
 
 #### Defined in
 
-[src/convert/filterer.ts:11](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/filterer.ts#L11)
+[src/convert/filterer.ts:11](https://github.com/suphero/forex-demo/blob/14e963f/src/convert/filterer.ts#L11)

@@ -31,6 +31,9 @@ export class ExchangeRoutes implements IRoutes {
 
   /**
    * Get Exchange Route
+   * @param req Request
+   * @param res Response
+   * @param next Next Function
    */
   getExchangeRate = async (req: Request, res: Response, next: NextFunction) => {
     try {
