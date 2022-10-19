@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / exchange/routes
+[forex-demo](../README.md) / [Exports](../modules.md) / exchange/routes
 
 # Module: exchange/routes
 

@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / [convert/model](../modules/convert_model.md) / ITransactionFilter
+[forex-demo](../README.md) / [Exports](../modules.md) / [convert/model](../modules/convert_model.md) / ITransactionFilter
 
 # Interface: ITransactionFilter
 
@@ -29,7 +29,7 @@ Transaction Filter Model
 
 #### Defined in
 
-[convert/model.ts:32](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/model.ts#L32)
+[src/convert/model.ts:32](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/model.ts#L32)
 
 ---
 
@@ -39,7 +39,7 @@ Transaction Filter Model
 
 #### Defined in
 
-[convert/model.ts:31](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/model.ts#L31)
+[src/convert/model.ts:31](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/model.ts#L31)
 
 ---
 
@@ -53,7 +53,7 @@ Transaction Filter Model
 
 #### Defined in
 
-[convert/model.ts:34](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/model.ts#L34)
+[src/convert/model.ts:34](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/model.ts#L34)
 
 ---
 
@@ -67,4 +67,4 @@ Transaction Filter Model
 
 #### Defined in
 
-[convert/model.ts:33](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/model.ts#L33)
+[src/convert/model.ts:33](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/model.ts#L33)

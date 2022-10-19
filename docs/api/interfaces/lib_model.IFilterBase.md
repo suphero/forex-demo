@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / [lib/model](../modules/lib_model.md) / IFilterBase
+[forex-demo](../README.md) / [Exports](../modules.md) / [lib/model](../modules/lib_model.md) / IFilterBase
 
 # Interface: IFilterBase
 
@@ -27,7 +27,7 @@ Filter Base Interface
 
 #### Defined in
 
-[lib/model.ts:5](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/lib/model.ts#L5)
+[src/lib/model.ts:5](https://github.com/suphero/forex-demo/blob/e73074c/src/lib/model.ts#L5)
 
 ---
 
@@ -37,4 +37,4 @@ Filter Base Interface
 
 #### Defined in
 
-[lib/model.ts:6](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/lib/model.ts#L6)
+[src/lib/model.ts:6](https://github.com/suphero/forex-demo/blob/e73074c/src/lib/model.ts#L6)

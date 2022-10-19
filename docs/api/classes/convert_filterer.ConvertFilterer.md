@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / [convert/filterer](../modules/convert_filterer.md) / ConvertFilterer
+[forex-demo](../README.md) / [Exports](../modules.md) / [convert/filterer](../modules/convert_filterer.md) / ConvertFilterer
 
 # Class: ConvertFilterer
 
@@ -55,4 +55,4 @@ Filterer Base
 
 #### Defined in
 
-[convert/filterer.ts:11](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/filterer.ts#L11)
+[src/convert/filterer.ts:11](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/filterer.ts#L11)

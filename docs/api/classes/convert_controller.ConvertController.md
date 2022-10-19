@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / [convert/controller](../modules/convert_controller.md) / ConvertController
+[forex-demo](../README.md) / [Exports](../modules.md) / [convert/controller](../modules/convert_controller.md) / ConvertController
 
 # Class: ConvertController
 
@@ -33,15 +33,15 @@ Convert Controller Constructor
 
 #### Parameters
 
-| Name                | Type                                                                                                                                                           |
-| :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `providerFactory`   | `ProviderFactory`                                                                                                                                              |
-| `repositoryFactory` | `RepositoryFactory`<[`ITransaction`](../interfaces/convert_model.ITransaction.md), [`ITransactionFilter`](../interfaces/convert_model.ITransactionFilter.md)\> |
-| `filterer`          | [`ConvertFilterer`](convert_filterer.ConvertFilterer.md)                                                                                                       |
+| Name                | Type                                                                                                                                                                                                          |
+| :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `providerFactory`   | [`ProviderFactory`](lib_provider_factory.ProviderFactory.md)                                                                                                                                                  |
+| `repositoryFactory` | [`RepositoryFactory`](lib_repository_factory.RepositoryFactory.md)<[`ITransaction`](../interfaces/convert_model.ITransaction.md), [`ITransactionFilter`](../interfaces/convert_model.ITransactionFilter.md)\> |
+| `filterer`          | [`ConvertFilterer`](convert_filterer.ConvertFilterer.md)                                                                                                                                                      |
 
 #### Defined in
 
-[convert/controller.ts:16](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/controller.ts#L16)
+[src/convert/controller.ts:16](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/controller.ts#L16)
 
 ## Properties
 
@@ -51,27 +51,27 @@ Convert Controller Constructor
 
 #### Defined in
 
-[convert/controller.ts:27](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/controller.ts#L27)
+[src/convert/controller.ts:27](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/controller.ts#L27)
 
 ---
 
 ### providerFactory
 
-• **providerFactory**: `ProviderFactory`
+• **providerFactory**: [`ProviderFactory`](lib_provider_factory.ProviderFactory.md)
 
 #### Defined in
 
-[convert/controller.ts:25](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/controller.ts#L25)
+[src/convert/controller.ts:25](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/controller.ts#L25)
 
 ---
 
 ### repositoryFactory
 
-• **repositoryFactory**: `RepositoryFactory`<[`ITransaction`](../interfaces/convert_model.ITransaction.md), [`ITransactionFilter`](../interfaces/convert_model.ITransactionFilter.md)\>
+• **repositoryFactory**: [`RepositoryFactory`](lib_repository_factory.RepositoryFactory.md)<[`ITransaction`](../interfaces/convert_model.ITransaction.md), [`ITransactionFilter`](../interfaces/convert_model.ITransactionFilter.md)\>
 
 #### Defined in
 
-[convert/controller.ts:26](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/controller.ts#L26)
+[src/convert/controller.ts:26](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/controller.ts#L26)
 
 ## Methods
 
@@ -95,7 +95,7 @@ Convert currency
 
 #### Defined in
 
-[convert/controller.ts:51](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/controller.ts#L51)
+[src/convert/controller.ts:51](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/controller.ts#L51)
 
 ---
 
@@ -117,4 +117,4 @@ Get Filtered Transactions
 
 #### Defined in
 
-[convert/controller.ts:34](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/controller.ts#L34)
+[src/convert/controller.ts:34](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/controller.ts#L34)

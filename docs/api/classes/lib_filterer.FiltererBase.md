@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / [lib/filterer](../modules/lib_filterer.md) / FiltererBase
+[forex-demo](../README.md) / [Exports](../modules.md) / [lib/filterer](../modules/lib_filterer.md) / FiltererBase
 
 # Class: FiltererBase<T, TFilter\>
 
@@ -61,4 +61,4 @@ Filterer Base
 
 #### Defined in
 
-[lib/filterer.ts:7](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/lib/filterer.ts#L7)
+[src/lib/filterer.ts:7](https://github.com/suphero/forex-demo/blob/e73074c/src/lib/filterer.ts#L7)

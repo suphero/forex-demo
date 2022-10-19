@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / convert/schema
+[forex-demo](../README.md) / [Exports](../modules.md) / convert/schema
 
 # Module: convert/schema
 
@@ -25,7 +25,7 @@ Joi Schema
 
 #### Defined in
 
-[convert/schema.ts:23](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/schema.ts#L23)
+[src/convert/schema.ts:23](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/schema.ts#L23)
 
 ---
 
@@ -43,4 +43,4 @@ Joi Schema
 
 #### Defined in
 
-[convert/schema.ts:7](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/schema.ts#L7)
+[src/convert/schema.ts:7](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/schema.ts#L7)

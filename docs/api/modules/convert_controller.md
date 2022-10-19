@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / convert/controller
+[forex-demo](../README.md) / [Exports](../modules.md) / convert/controller
 
 # Module: convert/controller
 

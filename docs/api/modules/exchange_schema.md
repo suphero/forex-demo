@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / exchange/schema
+[forex-demo](../README.md) / [Exports](../modules.md) / exchange/schema
 
 # Module: exchange/schema
 
@@ -24,4 +24,4 @@ Joi Schema
 
 #### Defined in
 
-[exchange/schema.ts:7](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/exchange/schema.ts#L7)
+[src/exchange/schema.ts:7](https://github.com/suphero/forex-demo/blob/e73074c/src/exchange/schema.ts#L7)

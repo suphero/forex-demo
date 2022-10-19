@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / lib/filterer
+[forex-demo](../README.md) / [Exports](../modules.md) / lib/filterer
 
 # Module: lib/filterer
 

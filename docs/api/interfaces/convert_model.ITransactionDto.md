@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / [convert/model](../modules/convert_model.md) / ITransactionDto
+[forex-demo](../README.md) / [Exports](../modules.md) / [convert/model](../modules/convert_model.md) / ITransactionDto
 
 # Interface: ITransactionDto
 
@@ -21,7 +21,7 @@ Transaction DTO Model
 
 #### Defined in
 
-[convert/model.ts:24](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/model.ts#L24)
+[src/convert/model.ts:24](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/model.ts#L24)
 
 ---
 
@@ -31,4 +31,4 @@ Transaction DTO Model
 
 #### Defined in
 
-[convert/model.ts:23](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/model.ts#L23)
+[src/convert/model.ts:23](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/model.ts#L23)

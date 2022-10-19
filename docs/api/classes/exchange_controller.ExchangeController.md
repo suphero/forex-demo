@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / [exchange/controller](../modules/exchange_controller.md) / ExchangeController
+[forex-demo](../README.md) / [Exports](../modules.md) / [exchange/controller](../modules/exchange_controller.md) / ExchangeController
 
 # Class: ExchangeController
 
@@ -30,23 +30,23 @@ Exchange Controller Constructor
 
 #### Parameters
 
-| Name              | Type              |
-| :---------------- | :---------------- |
-| `providerFactory` | `ProviderFactory` |
+| Name              | Type                                                         |
+| :---------------- | :----------------------------------------------------------- |
+| `providerFactory` | [`ProviderFactory`](lib_provider_factory.ProviderFactory.md) |
 
 #### Defined in
 
-[exchange/controller.ts:12](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/exchange/controller.ts#L12)
+[src/exchange/controller.ts:12](https://github.com/suphero/forex-demo/blob/e73074c/src/exchange/controller.ts#L12)
 
 ## Properties
 
 ### providerFactory
 
-• **providerFactory**: `ProviderFactory`
+• **providerFactory**: [`ProviderFactory`](lib_provider_factory.ProviderFactory.md)
 
 #### Defined in
 
-[exchange/controller.ts:15](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/exchange/controller.ts#L15)
+[src/exchange/controller.ts:15](https://github.com/suphero/forex-demo/blob/e73074c/src/exchange/controller.ts#L15)
 
 ## Methods
 
@@ -69,4 +69,4 @@ Get Latest Exchange Rate
 
 #### Defined in
 
-[exchange/controller.ts:23](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/exchange/controller.ts#L23)
+[src/exchange/controller.ts:23](https://github.com/suphero/forex-demo/blob/e73074c/src/exchange/controller.ts#L23)

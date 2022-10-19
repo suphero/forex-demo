@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / [exchange/routes](../modules/exchange_routes.md) / ExchangeRoutes
+[forex-demo](../README.md) / [Exports](../modules.md) / [exchange/routes](../modules/exchange_routes.md) / ExchangeRoutes
 
 # Class: ExchangeRoutes
 
@@ -8,7 +8,7 @@ Exchange Routes
 
 ## Implements
 
-- `IRoutes`
+- [`IRoutes`](../interfaces/lib_helpers_express.IRoutes.md)
 
 ## Table of contents
 
@@ -43,7 +43,7 @@ Constructor
 
 #### Defined in
 
-[exchange/routes.ts:20](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/exchange/routes.ts#L20)
+[src/exchange/routes.ts:20](https://github.com/suphero/forex-demo/blob/e73074c/src/exchange/routes.ts#L20)
 
 ## Properties
 
@@ -53,7 +53,7 @@ Constructor
 
 #### Defined in
 
-[exchange/routes.ts:15](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/exchange/routes.ts#L15)
+[src/exchange/routes.ts:15](https://github.com/suphero/forex-demo/blob/e73074c/src/exchange/routes.ts#L15)
 
 ---
 
@@ -63,11 +63,11 @@ Constructor
 
 #### Implementation of
 
-IRoutes.path
+[IRoutes](../interfaces/lib_helpers_express.IRoutes.md).[path](../interfaces/lib_helpers_express.IRoutes.md#path)
 
 #### Defined in
 
-[exchange/routes.ts:13](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/exchange/routes.ts#L13)
+[src/exchange/routes.ts:13](https://github.com/suphero/forex-demo/blob/e73074c/src/exchange/routes.ts#L13)
 
 ---
 
@@ -77,11 +77,11 @@ IRoutes.path
 
 #### Implementation of
 
-IRoutes.router
+[IRoutes](../interfaces/lib_helpers_express.IRoutes.md).[router](../interfaces/lib_helpers_express.IRoutes.md#router)
 
 #### Defined in
 
-[exchange/routes.ts:14](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/exchange/routes.ts#L14)
+[src/exchange/routes.ts:14](https://github.com/suphero/forex-demo/blob/e73074c/src/exchange/routes.ts#L14)
 
 ## Methods
 
@@ -105,7 +105,7 @@ Get Exchange Route
 
 #### Defined in
 
-[exchange/routes.ts:35](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/exchange/routes.ts#L35)
+[src/exchange/routes.ts:35](https://github.com/suphero/forex-demo/blob/e73074c/src/exchange/routes.ts#L35)
 
 ---
 
@@ -121,4 +121,4 @@ Initialize Routes
 
 #### Defined in
 
-[exchange/routes.ts:28](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/exchange/routes.ts#L28)
+[src/exchange/routes.ts:28](https://github.com/suphero/forex-demo/blob/e73074c/src/exchange/routes.ts#L28)

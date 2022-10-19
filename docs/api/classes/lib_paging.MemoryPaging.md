@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / [lib/paging](../modules/lib_paging.md) / MemoryPaging
+[forex-demo](../README.md) / [Exports](../modules.md) / [lib/paging](../modules/lib_paging.md) / MemoryPaging
 
 # Class: MemoryPaging<T\>
 
@@ -58,4 +58,4 @@ Paged data
 
 #### Defined in
 
-[lib/paging.ts:16](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/lib/paging.ts#L16)
+[src/lib/paging.ts:16](https://github.com/suphero/forex-demo/blob/e73074c/src/lib/paging.ts#L16)

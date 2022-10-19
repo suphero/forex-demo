@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / [convert/routes](../modules/convert_routes.md) / ConvertRoutes
+[forex-demo](../README.md) / [Exports](../modules.md) / [convert/routes](../modules/convert_routes.md) / ConvertRoutes
 
 # Class: ConvertRoutes
 
@@ -8,7 +8,7 @@ Convert Routes
 
 ## Implements
 
-- `IRoutes`
+- [`IRoutes`](../interfaces/lib_helpers_express.IRoutes.md)
 
 ## Table of contents
 
@@ -44,7 +44,7 @@ Constructor
 
 #### Defined in
 
-[convert/routes.ts:20](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/routes.ts#L20)
+[src/convert/routes.ts:20](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L20)
 
 ## Properties
 
@@ -54,7 +54,7 @@ Constructor
 
 #### Defined in
 
-[convert/routes.ts:15](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/routes.ts#L15)
+[src/convert/routes.ts:15](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L15)
 
 ---
 
@@ -64,11 +64,11 @@ Constructor
 
 #### Implementation of
 
-IRoutes.path
+[IRoutes](../interfaces/lib_helpers_express.IRoutes.md).[path](../interfaces/lib_helpers_express.IRoutes.md#path)
 
 #### Defined in
 
-[convert/routes.ts:13](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/routes.ts#L13)
+[src/convert/routes.ts:13](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L13)
 
 ---
 
@@ -78,11 +78,11 @@ IRoutes.path
 
 #### Implementation of
 
-IRoutes.router
+[IRoutes](../interfaces/lib_helpers_express.IRoutes.md).[router](../interfaces/lib_helpers_express.IRoutes.md#router)
 
 #### Defined in
 
-[convert/routes.ts:14](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/routes.ts#L14)
+[src/convert/routes.ts:14](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L14)
 
 ## Methods
 
@@ -106,7 +106,7 @@ Create Conversion
 
 #### Defined in
 
-[convert/routes.ts:55](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/routes.ts#L55)
+[src/convert/routes.ts:55](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L55)
 
 ---
 
@@ -130,7 +130,7 @@ Find Conversions
 
 #### Defined in
 
-[convert/routes.ts:39](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/routes.ts#L39)
+[src/convert/routes.ts:39](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L39)
 
 ---
 
@@ -146,4 +146,4 @@ Initialize Routes
 
 #### Defined in
 
-[convert/routes.ts:28](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/routes.ts#L28)
+[src/convert/routes.ts:28](https://github.com/suphero/forex-demo/blob/e73074c/src/convert/routes.ts#L28)

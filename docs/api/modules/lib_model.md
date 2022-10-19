@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / lib/model
+[forex-demo](../README.md) / [Exports](../modules.md) / lib/model
 
 # Module: lib/model
 

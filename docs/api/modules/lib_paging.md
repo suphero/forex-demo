@@ -1,4 +1,4 @@
-[forex-demo](../README.md) / [Modules](../modules.md) / lib/paging
+[forex-demo](../README.md) / [Exports](../modules.md) / lib/paging
 
 # Module: lib/paging
 

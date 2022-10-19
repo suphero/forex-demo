@@ -1,4 +1,4 @@
-forex-demo / [Modules](modules.md)
+forex-demo / [Exports](modules.md)
 
 # Forex Demo
 
