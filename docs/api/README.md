@@ -51,4 +51,5 @@ This variable is required when the [Repository](#repository-optional) selected J
 
 ## TODO
 
+- [ ] next(error)'lardan kurtul
 - [ ] Joi.alternatives Conflicting error message

@@ -1,9 +1,11 @@
 import 'reflect-metadata';
 import * as dotenv from 'dotenv';
+import Container from 'typedi';
 dotenv.config();
-import app from './app';
+import { App } from './app';
 import { createServer } from 'http';
 
+const { app } = Container.get(App);
 let port = parseInt(process.env.PORT || '3000', 10);
 app.set('port', port);
 

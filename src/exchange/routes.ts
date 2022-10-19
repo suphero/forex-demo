@@ -1,22 +1,44 @@
-import { Router } from 'express';
-import Container from 'typedi';
+import { Router, Request, Response, NextFunction } from 'express';
+import { Service } from 'typedi';
+import { IRoutes } from '../lib/helpers/express';
 import { validateSchema } from '../lib/helpers/joi';
 import { ExchangeController } from './controller';
 import { exchangeSchema } from './schema';
-let router = Router();
 
 /**
- * Get Exchange Route
+ * Exchange Routes
  */
-router.get('/', async (req, res, next) => {
-  try {
-    const value = validateSchema(exchangeSchema(), req.query);
-    const ctrl = Container.get(ExchangeController);
-    const rate = await ctrl.exchange(value.base, value.symbol);
-    res.json({ rate });
-  } catch (error) {
-    next(error);
-  }
-});
+@Service()
+export class ExchangeRoutes implements IRoutes {
+  public path = '/exchange';
+  public router = Router();
+  controller: ExchangeController;
 
-export default router;
+  /**
+   * Constructor
+   */
+  constructor(controller: ExchangeController) {
+    this.controller = controller;
+    this.intializeRoutes();
+  }
+
+  /**
+   * Initialize Routes
+   */
+  public intializeRoutes() {
+    this.router.get('/', this.getExchangeRate);
+  }
+
+  /**
+   * Get Exchange Route
+   */
+  getExchangeRate = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const value = validateSchema(exchangeSchema(), req.query);
+      const rate = await this.controller.exchange(value.base, value.symbol);
+      res.json({ rate });
+    } catch (error) {
+      next(error);
+    }
+  };
+}

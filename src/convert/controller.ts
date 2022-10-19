@@ -31,7 +31,7 @@ export class ConvertController {
    * @param {ITransactionFilter} filter Conversion Filter
    * @returns {ITransactionDto[]}
    */
-  conversions(filter: ITransactionFilter): ITransactionDto[] {
+  findConversions(filter: ITransactionFilter): ITransactionDto[] {
     const repository = this.repositoryFactory.createRepository(this.filterer);
     const transactions = repository.find(filter);
     const mappedResult = transactions.map((t) => ({
@@ -48,7 +48,7 @@ export class ConvertController {
    * @param {number} fromAmount From Amount
    * @returns {Promise<ITransactionDto>}
    */
-  async convert(
+  async createConversion(
     fromCurrency: string,
     toCurrency: string,
     fromAmount: number

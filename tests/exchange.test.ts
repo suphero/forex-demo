@@ -1,10 +1,13 @@
 import { describe, it, beforeEach } from 'mocha';
 import { expect } from 'chai';
 import request from 'supertest';
+import Container from 'typedi';
 import { StatusCodes } from 'http-status-codes';
-import app from '../src/app';
+import { App } from '../src/app';
 import { ProviderType } from '../src/lib/helpers/constants';
 import * as helper from './helper';
+
+const { app } = Container.get(App);
 
 describe('Exchange Rate API', () => {
   beforeEach(() => {

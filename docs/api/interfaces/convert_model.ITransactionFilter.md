@@ -29,7 +29,7 @@ Transaction Filter Model
 
 #### Defined in
 
-[src/convert/model.ts:32](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/convert/model.ts#L32)
+[convert/model.ts:32](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/model.ts#L32)
 
 ---
 
@@ -39,7 +39,7 @@ Transaction Filter Model
 
 #### Defined in
 
-[src/convert/model.ts:31](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/convert/model.ts#L31)
+[convert/model.ts:31](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/model.ts#L31)
 
 ---
 
@@ -53,7 +53,7 @@ Transaction Filter Model
 
 #### Defined in
 
-[src/convert/model.ts:34](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/convert/model.ts#L34)
+[convert/model.ts:34](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/model.ts#L34)
 
 ---
 
@@ -67,4 +67,4 @@ Transaction Filter Model
 
 #### Defined in
 
-[src/convert/model.ts:33](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/convert/model.ts#L33)
+[convert/model.ts:33](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/model.ts#L33)

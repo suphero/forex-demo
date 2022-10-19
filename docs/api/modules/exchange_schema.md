@@ -24,4 +24,4 @@ Joi Schema
 
 #### Defined in
 
-[src/exchange/schema.ts:7](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/exchange/schema.ts#L7)
+[exchange/schema.ts:7](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/exchange/schema.ts#L7)

@@ -1,36 +1,72 @@
-import { Router } from 'express';
-import Container from 'typedi';
+import { Router, Request, Response, NextFunction } from 'express';
+import { Service } from 'typedi';
+import { IRoutes } from '../lib/helpers/express';
 import { validateSchema } from '../lib/helpers/joi';
 import { ConvertController } from './controller';
 import { createSchema, findSchema } from './schema';
-let router = Router();
 
 /**
- * Find Conversions Route
+ * Convert Routes
  */
-router.get('/', (req, res, next) => {
-  try {
-    const value = validateSchema(findSchema(), req.query);
-    const ctrl = Container.get(ConvertController);
-    const result = ctrl.conversions(value);
-    res.json(result);
-  } catch (error) {
-    next(error);
-  }
-});
+@Service()
+export class ConvertRoutes implements IRoutes {
+  public path = '/convert';
+  public router = Router();
+  controller: ConvertController;
 
-/**
- * Create Conversion Route
- */
-router.post('/', async (req, res, next) => {
-  try {
-    const value = validateSchema(createSchema(), req.body);
-    const ctrl = Container.get(ConvertController);
-    const result = await ctrl.convert(value.from, value.to, value.amount);
-    res.json(result);
-  } catch (error) {
-    next(error);
+  /**
+   * Constructor
+   */
+  constructor(controller: ConvertController) {
+    this.controller = controller;
+    this.intializeRoutes();
   }
-});
 
-export default router;
+  /**
+   * Initialize Routes
+   */
+  public intializeRoutes() {
+    this.router.get('/', this.findConversions);
+    this.router.post('/', this.createConversion);
+  }
+
+  /**
+   * Find Conversions
+   * @param req Request
+   * @param res Response
+   * @param next Next Function
+   */
+  findConversions = (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const value = validateSchema(findSchema(), req.query);
+      const result = this.controller.findConversions(value);
+      res.json(result);
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  /**
+   * Create Conversion
+   * @param req Request
+   * @param res Response
+   * @param next Next Function
+   */
+  createConversion = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const value = validateSchema(createSchema(), req.body);
+      const result = await this.controller.createConversion(
+        value.from,
+        value.to,
+        value.amount
+      );
+      res.json(result);
+    } catch (error) {
+      next(error);
+    }
+  };
+}

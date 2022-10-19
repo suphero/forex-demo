@@ -1,23 +1,60 @@
 import createError from 'http-errors';
 import express, { json, urlencoded } from 'express';
 import { StatusCodes } from 'http-status-codes';
+import { Service } from 'typedi';
 
-import conversionRouter from './convert/routes';
-import exchangeRouter from './exchange/routes';
+import { ConvertRoutes } from './convert/routes';
+import { ExchangeRoutes } from './exchange/routes';
 import { handleError } from './lib/helpers/errorHandler';
+import { IRoutes } from './lib/helpers/express';
 
-let app = express();
+/**
+ * App
+ */
+@Service()
+export class App {
+  public app: express.Application;
+  private routes: IRoutes[];
 
-app.use(json());
-app.use(urlencoded({ extended: false }));
+  /**
+   * App Constructor
+   * @param convertRoutes /convert Routes
+   * @param exchangeRoutes /exchange Routes
+   */
+  constructor(convertRoutes: ConvertRoutes, exchangeRoutes: ExchangeRoutes) {
+    this.app = express();
+    this.routes = [convertRoutes, exchangeRoutes];
 
-app.use('/convert', conversionRouter);
-app.use('/exchange', exchangeRouter);
+    this.initializeMiddlewares();
+    this.initializeControllers();
+    this.initializeErrorHandlers();
+  }
 
-app.use((_req, _res, next) => {
-  next(createError(StatusCodes.NOT_FOUND));
-});
+  /**
+   * Initialize Middlewares
+   */
+  private initializeMiddlewares() {
+    this.app.use(json());
+    this.app.use(urlencoded({ extended: false }));
+  }
 
-app.use(handleError);
+  /**
+   * Initialize Controllers
+   */
+  private initializeControllers() {
+    this.routes.forEach((route) => {
+      this.app.use(route.path, route.router);
+    });
+  }
 
-export default app;
+  /**
+   * Initialize Error Handlers
+   */
+  private initializeErrorHandlers() {
+    this.app.use((_req, _res, next) => {
+      next(createError(StatusCodes.NOT_FOUND));
+    });
+
+    this.app.use(handleError);
+  }
+}

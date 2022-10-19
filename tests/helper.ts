@@ -1,12 +1,15 @@
 import nock from 'nock';
 import request from 'supertest';
+import Container from 'typedi';
 import {
   ExchangeRatesFreeApiBaseUrl,
   ExchangeRatesPremiumApiBaseUrl,
   FixerApiBaseUrl,
 } from '../src/lib/helpers/constants';
-import app from '../src/app';
+import { App } from '../src/app';
 import { StatusCodes } from 'http-status-codes';
+
+const { app } = Container.get(App);
 
 export const ER_API_KEY = 'ER_KEY';
 export const FX_API_KEY = 'FX_KEY';

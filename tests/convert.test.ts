@@ -2,12 +2,14 @@ import { describe, it } from 'mocha';
 import chai, { expect } from 'chai';
 import chaiAlmost from 'chai-almost';
 import request from 'supertest';
+import Container from 'typedi';
 import { StatusCodes } from 'http-status-codes';
 import fs from 'fs';
-import app from '../src/app';
+import { App } from '../src/app';
 import { ProviderType } from '../src/lib/helpers/constants';
 import * as helper from './helper';
 
+const { app } = Container.get(App);
 chai.use(chaiAlmost());
 
 describe('Conversion API', () => {

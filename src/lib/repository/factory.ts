@@ -1,4 +1,4 @@
-import Container, { Service } from 'typedi';
+import { Service } from 'typedi';
 import { BaseRepository, MemoryRepository, JsonRepository } from '.';
 import { RepositoryType } from '../helpers/constants';
 import { NotImplementedError } from '../helpers/errors';

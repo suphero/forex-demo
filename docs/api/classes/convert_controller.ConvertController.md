@@ -20,8 +20,8 @@ Convert Controller
 
 ### Methods
 
-- [conversions](convert_controller.ConvertController.md#conversions)
-- [convert](convert_controller.ConvertController.md#convert)
+- [createConversion](convert_controller.ConvertController.md#createconversion)
+- [findConversions](convert_controller.ConvertController.md#findconversions)
 
 ## Constructors
 
@@ -41,7 +41,7 @@ Convert Controller Constructor
 
 #### Defined in
 
-[src/convert/controller.ts:16](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/convert/controller.ts#L16)
+[convert/controller.ts:16](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/controller.ts#L16)
 
 ## Properties
 
@@ -51,7 +51,7 @@ Convert Controller Constructor
 
 #### Defined in
 
-[src/convert/controller.ts:27](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/convert/controller.ts#L27)
+[convert/controller.ts:27](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/controller.ts#L27)
 
 ---
 
@@ -61,7 +61,7 @@ Convert Controller Constructor
 
 #### Defined in
 
-[src/convert/controller.ts:25](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/convert/controller.ts#L25)
+[convert/controller.ts:25](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/controller.ts#L25)
 
 ---
 
@@ -71,35 +71,13 @@ Convert Controller Constructor
 
 #### Defined in
 
-[src/convert/controller.ts:26](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/convert/controller.ts#L26)
+[convert/controller.ts:26](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/controller.ts#L26)
 
 ## Methods
 
-### conversions
+### createConversion
 
-▸ **conversions**(`filter`): [`ITransactionDto`](../interfaces/convert_model.ITransactionDto.md)[]
-
-Get Filtered Transactions
-
-#### Parameters
-
-| Name     | Type                                                                      | Description       |
-| :------- | :------------------------------------------------------------------------ | :---------------- |
-| `filter` | [`ITransactionFilter`](../interfaces/convert_model.ITransactionFilter.md) | Conversion Filter |
-
-#### Returns
-
-[`ITransactionDto`](../interfaces/convert_model.ITransactionDto.md)[]
-
-#### Defined in
-
-[src/convert/controller.ts:34](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/convert/controller.ts#L34)
-
----
-
-### convert
-
-▸ **convert**(`fromCurrency`, `toCurrency`, `fromAmount`): `Promise`<[`ITransactionDto`](../interfaces/convert_model.ITransactionDto.md)\>
+▸ **createConversion**(`fromCurrency`, `toCurrency`, `fromAmount`): `Promise`<[`ITransactionDto`](../interfaces/convert_model.ITransactionDto.md)\>
 
 Convert currency
 
@@ -117,4 +95,26 @@ Convert currency
 
 #### Defined in
 
-[src/convert/controller.ts:51](https://github.com/suphero/forex-demo/blob/a1f2b6b/src/convert/controller.ts#L51)
+[convert/controller.ts:51](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/controller.ts#L51)
+
+---
+
+### findConversions
+
+▸ **findConversions**(`filter`): [`ITransactionDto`](../interfaces/convert_model.ITransactionDto.md)[]
+
+Get Filtered Transactions
+
+#### Parameters
+
+| Name     | Type                                                                      | Description       |
+| :------- | :------------------------------------------------------------------------ | :---------------- |
+| `filter` | [`ITransactionFilter`](../interfaces/convert_model.ITransactionFilter.md) | Conversion Filter |
+
+#### Returns
+
+[`ITransactionDto`](../interfaces/convert_model.ITransactionDto.md)[]
+
+#### Defined in
+
+[convert/controller.ts:34](https://github.com/suphero/forex-demo/blob/4b7f9d5/src/convert/controller.ts#L34)
