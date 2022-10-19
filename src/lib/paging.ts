@@ -14,6 +14,6 @@ export class MemoryPaging<T> {
    * @returns Paged data
    */
   page(data: T[], filter: IFilterBase): T[] {
-    return data.slice(filter.offset, filter.limit);
+    return data.slice(filter.offset, filter.offset + filter.limit);
   }
 }

@@ -166,7 +166,49 @@ describe('Conversion List API', () => {
     process.env.REPOSITORY_FILE_PATH = 'test/db.json';
     const response = await helper.conversionListRequest({ date: '2022-10-17' });
     expect(response.statusCode).equal(StatusCodes.OK);
-    expect(response.body).lengthOf(2);
+    expect(response.body).lengthOf(10);
+    expect(response.body[0].id).equal('id1');
+    expect(response.body[9].id).equal('id10');
+  });
+
+  it('SHOULD respond WHEN limit set', async () => {
+    process.env.REPOSITORY = 'JSON';
+    process.env.REPOSITORY_FILE_PATH = 'test/db.json';
+    const response = await helper.conversionListRequest({
+      date: '2022-10-17',
+      limit: '5',
+    });
+    expect(response.statusCode).equal(StatusCodes.OK);
+    expect(response.body).lengthOf(5);
+    expect(response.body[0].id).equal('id1');
+    expect(response.body[4].id).equal('id5');
+  });
+
+  it('SHOULD respond WHEN offset set', async () => {
+    process.env.REPOSITORY = 'JSON';
+    process.env.REPOSITORY_FILE_PATH = 'test/db.json';
+    const response = await helper.conversionListRequest({
+      date: '2022-10-17',
+      offset: '5',
+    });
+    expect(response.statusCode).equal(StatusCodes.OK);
+    expect(response.body).lengthOf(10);
+    expect(response.body[0].id).equal('id6');
+    expect(response.body[9].id).equal('id15');
+  });
+
+  it('SHOULD respond WHEN limit and offset set', async () => {
+    process.env.REPOSITORY = 'JSON';
+    process.env.REPOSITORY_FILE_PATH = 'test/db.json';
+    const response = await helper.conversionListRequest({
+      date: '2022-10-17',
+      limit: '5',
+      offset: '5',
+    });
+    expect(response.statusCode).equal(StatusCodes.OK);
+    expect(response.body).lengthOf(5);
+    expect(response.body[0].id).equal('id6');
+    expect(response.body[4].id).equal('id10');
   });
 
   it('SHOULD respond WHEN JSON file does not exist', async () => {

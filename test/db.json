@@ -10,5 +10,83 @@
     "date": "2022-10-17T20:16:54.879Z",
     "from": { "currency": "EUR", "amount": 5 },
     "to": { "currency": "USD", "amount": 4.9186 }
+  },
+  {
+    "id": "id3",
+    "date": "2022-10-17T20:16:54.879Z",
+    "from": { "currency": "EUR", "amount": 5 },
+    "to": { "currency": "USD", "amount": 4.9186 }
+  },
+  {
+    "id": "id4",
+    "date": "2022-10-17T20:16:54.879Z",
+    "from": { "currency": "EUR", "amount": 5 },
+    "to": { "currency": "USD", "amount": 4.9186 }
+  },
+  {
+    "id": "id5",
+    "date": "2022-10-17T20:16:54.879Z",
+    "from": { "currency": "EUR", "amount": 5 },
+    "to": { "currency": "USD", "amount": 4.9186 }
+  },
+  {
+    "id": "id6",
+    "date": "2022-10-17T20:16:54.879Z",
+    "from": { "currency": "EUR", "amount": 5 },
+    "to": { "currency": "USD", "amount": 4.9186 }
+  },
+  {
+    "id": "id7",
+    "date": "2022-10-17T20:16:54.879Z",
+    "from": { "currency": "EUR", "amount": 5 },
+    "to": { "currency": "USD", "amount": 4.9186 }
+  },
+  {
+    "id": "id8",
+    "date": "2022-10-17T20:16:54.879Z",
+    "from": { "currency": "EUR", "amount": 5 },
+    "to": { "currency": "USD", "amount": 4.9186 }
+  },
+  {
+    "id": "id9",
+    "date": "2022-10-17T20:16:54.879Z",
+    "from": { "currency": "EUR", "amount": 5 },
+    "to": { "currency": "USD", "amount": 4.9186 }
+  },
+  {
+    "id": "id10",
+    "date": "2022-10-17T20:16:54.879Z",
+    "from": { "currency": "EUR", "amount": 5 },
+    "to": { "currency": "USD", "amount": 4.9186 }
+  },
+  {
+    "id": "id11",
+    "date": "2022-10-17T20:15:28.031Z",
+    "from": { "currency": "EUR", "amount": 5 },
+    "to": { "currency": "USD", "amount": 4.91908 }
+  },
+  {
+    "id": "id12",
+    "date": "2022-10-17T20:16:54.879Z",
+    "from": { "currency": "EUR", "amount": 5 },
+    "to": { "currency": "USD", "amount": 4.9186 }
+  },
+  {
+    "id": "id13",
+    "date": "2022-10-17T20:16:54.879Z",
+    "from": { "currency": "EUR", "amount": 5 },
+    "to": { "currency": "USD", "amount": 4.9186 }
+  },
+  {
+    "id": "id14",
+    "date": "2022-10-17T20:16:54.879Z",
+    "from": { "currency": "EUR", "amount": 5 },
+    "to": { "currency": "USD", "amount": 4.9186 }
+  },
+  {
+    "id": "id15",
+    "date": "2022-10-17T20:16:54.879Z",
+    "from": { "currency": "EUR", "amount": 5 },
+    "to": { "currency": "USD", "amount": 4.9186 }
   }
 ]
