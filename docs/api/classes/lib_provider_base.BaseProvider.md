@@ -53,7 +53,7 @@ Convert exchange
 
 #### Defined in
 
-[src/lib/provider/base.ts:19](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/provider/base.ts#L19)
+[src/lib/provider/base.ts:19](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/base.ts#L19)
 
 ---
 
@@ -76,4 +76,4 @@ Get Latest Exchange Rate
 
 #### Defined in
 
-[src/lib/provider/base.ts:11](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/provider/base.ts#L11)
+[src/lib/provider/base.ts:11](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/provider/base.ts#L11)

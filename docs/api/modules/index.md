@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[src/index.ts:12](https://github.com/suphero/forex-demo/blob/14e963f/src/index.ts#L12)
+[src/index.ts:12](https://github.com/suphero/forex-demo/blob/2d16766/src/index.ts#L12)

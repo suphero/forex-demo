@@ -50,7 +50,7 @@ Repository Factory Constructor
 
 #### Defined in
 
-[src/lib/repository/factory.ts:17](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/repository/factory.ts#L17)
+[src/lib/repository/factory.ts:17](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/repository/factory.ts#L17)
 
 ## Properties
 
@@ -60,7 +60,7 @@ Repository Factory Constructor
 
 #### Defined in
 
-[src/lib/repository/factory.ts:20](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/repository/factory.ts#L20)
+[src/lib/repository/factory.ts:20](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/repository/factory.ts#L20)
 
 ## Methods
 
@@ -82,4 +82,4 @@ Create Repository
 
 #### Defined in
 
-[src/lib/repository/factory.ts:26](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/repository/factory.ts#L26)
+[src/lib/repository/factory.ts:26](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/repository/factory.ts#L26)

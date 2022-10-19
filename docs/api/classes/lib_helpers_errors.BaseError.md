@@ -61,7 +61,7 @@ Error.constructor
 
 #### Defined in
 
-[src/lib/helpers/errors.ts:13](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/helpers/errors.ts#L13)
+[src/lib/helpers/errors.ts:13](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/helpers/errors.ts#L13)
 
 ## Properties
 
@@ -113,7 +113,7 @@ node_modules/typescript/lib/lib.es5.d.ts:1042
 
 #### Defined in
 
-[src/lib/helpers/errors.ts:21](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/helpers/errors.ts#L21)
+[src/lib/helpers/errors.ts:21](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/helpers/errors.ts#L21)
 
 ---
 

@@ -43,7 +43,7 @@ Constructor
 
 #### Defined in
 
-[src/exchange/routes.ts:20](https://github.com/suphero/forex-demo/blob/14e963f/src/exchange/routes.ts#L20)
+[src/exchange/routes.ts:20](https://github.com/suphero/forex-demo/blob/2d16766/src/exchange/routes.ts#L20)
 
 ## Properties
 
@@ -53,7 +53,7 @@ Constructor
 
 #### Defined in
 
-[src/exchange/routes.ts:15](https://github.com/suphero/forex-demo/blob/14e963f/src/exchange/routes.ts#L15)
+[src/exchange/routes.ts:15](https://github.com/suphero/forex-demo/blob/2d16766/src/exchange/routes.ts#L15)
 
 ---
 
@@ -67,7 +67,7 @@ Constructor
 
 #### Defined in
 
-[src/exchange/routes.ts:13](https://github.com/suphero/forex-demo/blob/14e963f/src/exchange/routes.ts#L13)
+[src/exchange/routes.ts:13](https://github.com/suphero/forex-demo/blob/2d16766/src/exchange/routes.ts#L13)
 
 ---
 
@@ -81,7 +81,7 @@ Constructor
 
 #### Defined in
 
-[src/exchange/routes.ts:14](https://github.com/suphero/forex-demo/blob/14e963f/src/exchange/routes.ts#L14)
+[src/exchange/routes.ts:14](https://github.com/suphero/forex-demo/blob/2d16766/src/exchange/routes.ts#L14)
 
 ## Methods
 
@@ -105,7 +105,7 @@ Get Exchange Route
 
 #### Defined in
 
-[src/exchange/routes.ts:38](https://github.com/suphero/forex-demo/blob/14e963f/src/exchange/routes.ts#L38)
+[src/exchange/routes.ts:38](https://github.com/suphero/forex-demo/blob/2d16766/src/exchange/routes.ts#L38)
 
 ---
 
@@ -121,4 +121,4 @@ Initialize Routes
 
 #### Defined in
 
-[src/exchange/routes.ts:28](https://github.com/suphero/forex-demo/blob/14e963f/src/exchange/routes.ts#L28)
+[src/exchange/routes.ts:28](https://github.com/suphero/forex-demo/blob/2d16766/src/exchange/routes.ts#L28)

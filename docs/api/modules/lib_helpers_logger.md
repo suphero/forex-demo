@@ -18,4 +18,4 @@ Create Logger
 
 #### Defined in
 
-[src/lib/helpers/logger.ts:18](https://github.com/suphero/forex-demo/blob/14e963f/src/lib/helpers/logger.ts#L18)
+[src/lib/helpers/logger.ts:18](https://github.com/suphero/forex-demo/blob/2d16766/src/lib/helpers/logger.ts#L18)

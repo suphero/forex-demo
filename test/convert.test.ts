@@ -66,12 +66,12 @@ describe('Conversion API', () => {
     process.env.EXCHANGERATES_API_KEY = helper.ER_API_KEY;
     process.env.EXCHANGERATES_PREMIUM_PLAN = 'true';
     process.env.REPOSITORY = 'JSON';
-    process.env.REPOSITORY_FILE_PATH = 'tests/temp/db.json';
+    process.env.REPOSITORY_FILE_PATH = 'test/temp/db.json';
     helper.erConvertRepliedNock('EUR', 'USD', 5, 5.55);
     const response = await helper.conversionRequest('EUR', 'USD', 5);
     expect(response.statusCode).equal(StatusCodes.OK);
     expect(response.body.amount).equal(5.55);
-    fs.rmSync('tests/temp', { recursive: true, force: true });
+    fs.rmSync('test/temp', { recursive: true, force: true });
   });
 
   it('SHOULD throw WHEN ER Free version requires upgrade', async () => {
@@ -155,7 +155,7 @@ describe('Conversion List API', () => {
 
   it('SHOULD respond WHEN data exists with id filter', async () => {
     process.env.REPOSITORY = 'JSON';
-    process.env.REPOSITORY_FILE_PATH = 'tests/data/db.json';
+    process.env.REPOSITORY_FILE_PATH = 'test/db.json';
     const response = await helper.conversionListRequest({
       id: '3c5fddc7-c535-4b09-b7f1-8c112bb117a6',
     });
@@ -165,7 +165,7 @@ describe('Conversion List API', () => {
 
   it('SHOULD respond WHEN data exists with date filter', async () => {
     process.env.REPOSITORY = 'JSON';
-    process.env.REPOSITORY_FILE_PATH = 'tests/data/db.json';
+    process.env.REPOSITORY_FILE_PATH = 'test/db.json';
     const response = await helper.conversionListRequest({ date: '2022-10-17' });
     expect(response.statusCode).equal(StatusCodes.OK);
     expect(response.body).lengthOf(2);
@@ -173,7 +173,7 @@ describe('Conversion List API', () => {
 
   it('SHOULD respond WHEN JSON file does not exist', async () => {
     process.env.REPOSITORY = 'JSON';
-    process.env.REPOSITORY_FILE_PATH = 'tests/data/db2.json';
+    process.env.REPOSITORY_FILE_PATH = 'test/db2.json';
     const response = await helper.conversionListRequest({ id: '123' });
     expect(response.statusCode).equal(StatusCodes.OK);
     expect(response.body).lengthOf(0);
